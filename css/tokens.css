@@ -138,7 +138,12 @@ b, strong { font-weight: var(--w-semi); }
 
 /* ---------------- SECTIONS ---------------- */
 .section { padding-block: var(--section-y); }
-.section + .section { padding-top: 0; }
+/* Bands alternate colour, so every section boundary is a colour change:
+   each band keeps its own top padding so headings never butt against the
+   colour line. Only collapse the doubled gap where two SAME-colour bands
+   meet (no visible seam there). */
+.section:not(.section--alt) + .section:not(.section--alt),
+.section--alt + .section--alt { padding-top: 0; }
 .section__head { margin-bottom: clamp(1.8rem, 4vw, 3rem); max-width: var(--measure); }
 .section__title { font-size: var(--step-4); }
 .section__intro { color: var(--muted); font-size: var(--step-1); margin-top: 1rem; max-width: 54ch; }
