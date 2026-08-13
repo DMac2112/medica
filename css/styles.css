@@ -355,3 +355,10 @@ body[data-koord]{ }
 /* Redakcja: keep its dotted-leader flourish on the accordion titles too */
 [data-style="redakcja"] .docacc__name,[data-style="redakcja"] .docacc__field{ font-family:var(--font-eyebrow); }
 [data-style="redakcja"] .docacc__name{ font-family:var(--font-display); font-weight:600; }
+
+/* Mobile: the display layer centres (see tokens.css). Re-anchor the
+   Informacyjny accent underline under the centred title. Lives here so it
+   wins over the left:0 base rule by source order. */
+@media (max-width:720px){
+  [data-style="informacyjny"] .section__title::after{ left:50%; transform:translateX(-50%); }
+}

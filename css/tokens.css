@@ -427,3 +427,21 @@ b, strong { font-weight: var(--w-semi); }
   .flick.is-open .flick__cap { display: inline-block; width: 3.1rem; flex: none; padding-right: 0; }
   .flick.is-open .flick__read { flex: 1; min-width: 0; align-items: center; text-align: center; }
 }
+
+/* ---------------- MOBILE: CENTRE THE DISPLAY LAYER ----------------
+   On phones the hero and every section header centre-align (eyebrow, title,
+   intro, CTAs, hero facts) so the page reads balanced instead of hugging the
+   left. Dense content — lists, doctor accordions, price explorer, contact
+   rows, legal text — stays left-aligned for legibility. Desktop keeps its
+   editorial left alignment (unchanged above 720px). */
+@media (max-width: 720px) {
+  .hero__in { text-align: center; }
+  .hero__title { margin-inline: auto; }
+  .hero__lead  { margin-inline: auto; }
+  .hero__cta   { justify-content: center; }
+  .hero__facts { justify-content: center; text-align: center; }
+
+  .section__head { text-align: center; margin-inline: auto; }
+  .section__intro { margin-inline: auto; }
+  .subhead { text-align: center; }
+}
