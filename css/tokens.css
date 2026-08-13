@@ -6,7 +6,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 :root {
@@ -374,4 +374,25 @@ b, strong { font-weight: var(--w-semi); }
   .flick__shuffle { display: none; }
   .flick__sep:last-of-type { display: none; }
   .price td { padding: .8rem .2rem; }
+}
+
+/* Style & colour switcher on phones — the single-row pill can't hold two
+   labelled control groups at narrow widths (it would overrun the viewport
+   and drag the whole page into horizontal scroll). Fold it into a compact
+   two-row card: each row is its cap + edge arrows + centred name, and the
+   two rows share identical geometry so the arrows line up in two columns. */
+@media (max-width: 500px) {
+  .flick {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .34rem;
+    border-radius: 16px;
+    padding: .55rem .6rem .6rem;
+    max-width: min(20rem, calc(100vw - 1.4rem));
+  }
+  .flick__group { gap: .45rem; }
+  .flick__cap { display: inline-block; width: 3.1rem; flex: none; padding-right: 0; }
+  .flick__read { flex: 1; min-width: 0; align-items: center; text-align: center; }
+  .flick__sep { display: none; }
+  .flick__shuffle { display: block; width: 100%; margin-top: .1rem; }
 }
