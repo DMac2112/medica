@@ -362,37 +362,63 @@ b, strong { font-weight: var(--w-semi); }
   .nav__links a { padding: .7rem 0; border-bottom: 1px solid var(--line); }
   .nav__burger { display: flex; }
   .nav__cta { display: none; }
-  .flick__cap { display: none; }
-  .flick__read { min-width: 6.4rem; }
-  .flick { gap: .3rem; padding: .45rem .5rem; }
 }
 @media (max-width: 560px) {
   .grid--3, .people { grid-template-columns: 1fr; }
   .factstrip { grid-template-columns: 1fr; }
   .factstrip > div { border-left: none; border-top: var(--border) solid var(--line); }
   .factstrip > div:first-child { border-top: none; }
-  .flick__shuffle { display: none; }
-  .flick__sep:last-of-type { display: none; }
   .price td { padding: .8rem .2rem; }
 }
 
-/* Style & colour switcher on phones — the single-row pill can't hold two
-   labelled control groups at narrow widths (it would overrun the viewport
-   and drag the whole page into horizontal scroll). Fold it into a compact
-   two-row card: each row is its cap + edge arrows + centred name, and the
-   two rows share identical geometry so the arrows line up in two columns. */
-@media (max-width: 500px) {
+/* ---------------- FLICKER — MOBILE COLLAPSE ----------------
+   On phones the fixed switcher must never sit permanently over the page.
+   It collapses to a small corner tab (accent dot mirrors the live colourway
+   + "Wygląd"); tapping it opens the full control as a compact two-row card
+   anchored in the corner, with a ✕ close handle. Tap-outside also closes.
+   Desktop keeps the centred single-row pill (toggle stays display:none). */
+.flick__toggle { display: none; }
+
+@media (max-width: 720px) {
   .flick {
+    left: auto;
+    right: clamp(.8rem, 3vw, 1.2rem);
+    transform: none;
     flex-direction: column;
     align-items: stretch;
-    gap: .34rem;
+    gap: .3rem;
+    padding: .3rem;
     border-radius: 16px;
-    padding: .55rem .6rem .6rem;
     max-width: min(20rem, calc(100vw - 1.4rem));
   }
-  .flick__group { gap: .45rem; }
-  .flick__cap { display: inline-block; width: 3.1rem; flex: none; padding-right: 0; }
-  .flick__read { flex: 1; min-width: 0; align-items: center; text-align: center; }
-  .flick__sep { display: none; }
-  .flick__shuffle { display: block; width: 100%; margin-top: .1rem; }
+  /* collapsed (default): only the trigger shows */
+  .flick__toggle {
+    display: flex; align-items: center; gap: .55rem;
+    min-height: 40px; padding: .3rem .7rem;
+    border: none; background: transparent; cursor: pointer;
+    font-family: var(--font-ui); font-weight: var(--w-bold);
+    font-size: .82rem; letter-spacing: .01em; color: var(--ink);
+    border-radius: 13px;
+  }
+  .flick__toggle-dot {
+    width: 12px; height: 12px; border-radius: 50%; flex: none;
+    background: var(--accent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+  .flick__toggle-x { display: none; margin-left: auto; font-size: .85rem; color: var(--muted); }
+
+  .flick__group, .flick__sep, .flick__shuffle { display: none; }
+
+  /* open state */
+  .flick.is-open { padding: .5rem .6rem .6rem; }
+  .flick.is-open .flick__toggle {
+    border-bottom: 1px solid var(--line); border-radius: 0;
+    padding: .15rem .3rem .5rem; margin-bottom: .15rem;
+  }
+  .flick.is-open .flick__toggle-x { display: block; }
+  .flick.is-open .flick__group { display: flex; gap: .45rem; }
+  .flick.is-open .flick__sep { display: none; }
+  .flick.is-open .flick__shuffle { display: block; width: 100%; margin-top: .15rem; }
+  .flick.is-open .flick__cap { display: inline-block; width: 3.1rem; flex: none; padding-right: 0; }
+  .flick.is-open .flick__read { flex: 1; min-width: 0; align-items: center; text-align: center; }
 }

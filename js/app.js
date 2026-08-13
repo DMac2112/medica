@@ -100,16 +100,36 @@
     );
   }
 
-  document.getElementById('flick').addEventListener('click', function (e) {
+  var flickEl = document.getElementById('flick');
+  var flickToggle = flickEl.querySelector('.flick__toggle');
+
+  function setFlickOpen(open) {
+    flickEl.classList.toggle('is-open', open);
+    if (flickToggle) flickToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  flickEl.addEventListener('click', function (e) {
     var b = e.target.closest('[data-act]');
     if (!b) return;
     switch (b.getAttribute('data-act')) {
+      case 'toggle':     setFlickOpen(!flickEl.classList.contains('is-open')); break;
       case 'style-prev': stepStyle(-1); break;
       case 'style-next': stepStyle(1);  break;
       case 'color-prev': stepColor(-1); break;
       case 'color-next': stepColor(1);  break;
       case 'shuffle':    shuffle();     break;
     }
+  });
+
+  /* On mobile the switcher opens as a corner card; tap anywhere outside
+     (or press Escape) collapses it so it never blocks the page. */
+  document.addEventListener('click', function (e) {
+    if (!flickEl.classList.contains('is-open')) return;
+    if (flickEl.contains(e.target)) return;
+    setFlickOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && flickEl.classList.contains('is-open')) setFlickOpen(false);
   });
 
   document.addEventListener('keydown', function (e) {
