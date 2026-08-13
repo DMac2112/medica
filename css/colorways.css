@@ -1,0 +1,61 @@
+/* =========================================================================
+   ARSMEDICA — colorways.css
+   10 palettes, ALL on a pure-white background. Colour lives only in the
+   accent (buttons, links, small labels, left-borders, icon chips) — never
+   as a wash over the page. Neutral near-black text on white throughout,
+   echoing the practice's real brand (white + red + muted green + grey).
+
+   Fixed neutral scaffold (same for every palette):
+     --bg #ffffff  --surface #ffffff  --surface-2 #f4f5f6
+     --ink #1a1d21  --muted #5b616b   --line #e5e7ea
+   Per-palette: --accent --accent-ink --accent-soft --focus
+   ========================================================================= */
+
+:root{
+  /* Soft warm paper, not pure white: gentler on older eyes, flatters the red,
+     and lets cards (pure white) separate by depth instead of coloured borders. */
+  --bg:#faf8f4; --surface:#ffffff; --surface-2:#f2efe9;
+  --ink:#1a1d21; --muted:#5b616b; --line:#e6e1d8;
+}
+
+/* 01 · Czerwień — the practice's own brand red (default), a touch deeper/calmer
+   than the vivid web red so it reads composed, not loud. */
+:root[data-colorway="czerwien"]{
+  --accent:#b01f2c; --accent-ink:#ffffff; --accent-soft:#f6e7e6; --focus:#851621;
+}
+/* 02 · Zieleń — their secondary medical green */
+:root[data-colorway="zielen"]{
+  --accent:#277049; --accent-ink:#ffffff; --accent-soft:#e5f1ea; --focus:#1c5537;
+}
+/* 03 · Błękit — clinical blue */
+:root[data-colorway="blekit"]{
+  --accent:#1668a8; --accent-ink:#ffffff; --accent-soft:#e4eff7; --focus:#0f4e80;
+}
+/* 04 · Granat — trustworthy navy */
+:root[data-colorway="granat"]{
+  --accent:#23386b; --accent-ink:#ffffff; --accent-soft:#e7eaf2; --focus:#182749;
+}
+/* 05 · Morski — teal */
+:root[data-colorway="morski"]{
+  --accent:#0e7370; --accent-ink:#ffffff; --accent-soft:#e0f0ef; --focus:#0a5350;
+}
+/* 06 · Szmaragd — emerald */
+:root[data-colorway="szmaragd"]{
+  --accent:#12784a; --accent-ink:#ffffff; --accent-soft:#e2f1e9; --focus:#0c5836;
+}
+/* 07 · Bordo — deep burgundy */
+:root[data-colorway="bordo"]{
+  --accent:#8c2033; --accent-ink:#ffffff; --accent-soft:#f4e5e8; --focus:#6a1626;
+}
+/* 08 · Grafit — near-mono charcoal */
+:root[data-colorway="grafit"]{
+  --accent:#34383f; --accent-ink:#ffffff; --accent-soft:#eceef0; --focus:#34383f;
+}
+/* 09 · Stal — steel blue */
+:root[data-colorway="stal"]{
+  --accent:#3f5670; --accent-ink:#ffffff; --accent-soft:#e9ecf0; --focus:#2c3e53;
+}
+/* 10 · Bursztyn — warm amber */
+:root[data-colorway="bursztyn"]{
+  --accent:#8a5e10; --accent-ink:#ffffff; --accent-soft:#f5ecd8; --focus:#6a480b;
+}

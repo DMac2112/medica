@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pl" data-style="informacyjny" data-colorway="czerwien">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ARSMEDICA — Praktyka Lekarska · Przychodnia Kalisz</title>
+<meta name="description" content="ARSMEDICA CENTRUM — Poradnia Podstawowej Opieki Zdrowotnej w Kaliszu. Profilaktyka, opieka koordynowana, poradnie specjalistyczne, laboratorium." />
+<link rel="preload" href="assets/fonts/publicsans-700-normal-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/colorways.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ SVG SPRITE (signatures / icons) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-monogram" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M18 44 L26 20 L32 38 L38 20 L46 44 M22 36 H36" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-sprig" viewBox="0 0 40 80">
+    <path d="M20 78 C20 60 20 40 20 4" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <path d="M20 24 C10 20 6 12 8 6 C16 8 20 14 20 24 Z M20 40 C30 36 34 28 32 22 C24 24 20 30 20 40 Z M20 56 C10 52 6 44 8 38 C16 40 20 46 20 56 Z" fill="none" stroke="currentColor" stroke-width="1.1"/>
+  </symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24">
+    <path d="M12 3 v18 M3 12 h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="ARSMEDICA — strona główna">
+      <svg class="brand__mark" aria-hidden="true"><use href="#i-monogram"/></svg>
+      <span class="brand__txt">
+        <span class="brand__name">ARSMEDICA</span>
+        <span class="brand__sub">Praktyka Lekarska · Kalisz</span>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Główne">
+      <a href="#o-nas">O nas</a>
+      <a href="#profilaktyka">Profilaktyka</a>
+      <a href="#poz">Oferta POZ</a>
+      <a href="#specjalisci">Specjaliści</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#wazne">Ważne</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="nav__end">
+      <a class="btn btn--accent nav__cta" href="#recepta">Zamów receptę</a>
+      <button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="tresc">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="start">
+    <div class="wrap hero__in">
+      <p class="eyebrow hero__eyebrow">ARSMEDICA CENTRUM · Poradnia Podstawowej Opieki Zdrowotnej</p>
+      <h1 class="hero__title">Zadbaj o zdrowie<br><span class="hero__title-em">— skorzystaj z profilaktyki i opieki koordynowanej</span></h1>
+      <p class="hero__lead">Przychodnia świadczy usługi w ramach umowy z NFZ od poniedziałku do piątku w godz. od 8.00 do 18.00. Zachęcamy do korzystania z naszych usług.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="#recepta">Zamów receptę <svg class="btn__ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="#kontakt">Kontakt i rejestracja</a>
+      </div>
+      <dl class="hero__facts">
+        <div class="fact"><dt>Adres</dt><dd>Babina 3, 62-800 Kalisz</dd></div>
+        <div class="fact"><dt>Telefon</dt><dd><a href="tel:+48625802252">+48 62 580 22 52</a></dd></div>
+        <div class="fact"><dt>Godziny</dt><dd>pon–pt 7:30–18:00</dd></div>
+      </dl>
+    </div>
+    <div class="hero__deco" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ O NAS ============ -->
+  <section class="section section--onas section--alt" id="o-nas">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">O nas</p>
+        <h2 class="section__title">ARSMEDICA CENTRUM</h2>
+        <p class="section__intro">Poradnia Podstawowej Opieki Zdrowotnej w Kaliszu. Świadczymy usługi w ramach umowy z NFZ od poniedziałku do piątku w godz. od 8.00 do 18.00, a także prowadzimy prywatne gabinety specjalistyczne. Zachęcamy do korzystania z naszych usług.</p>
+      </div>
+      <p class="entity">„ARSMEDICA" Spółka Partnerska Lekarzy — Andrzejczak, Krawczyk-Kubisiak, Lisowski · ul. Babina 3, 62-800 Kalisz</p>
+    </div>
+  </section>
+
+  <!-- ============ PROFILAKTYKA / PROGRAMY ============ -->
+  <section class="section section--programy" id="profilaktyka">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Profilaktyka i programy zdrowotne</p>
+        <h2 class="section__title">Programy profilaktyczne NFZ</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--prog">
+          <span class="card__idx">I</span>
+          <h3 class="card__title">Program profilaktyki chorób układu krążenia (CHUK)</h3>
+        </article>
+        <article class="card card--prog">
+          <span class="card__idx">II</span>
+          <h3 class="card__title">Moje Zdrowie — bilans zdrowia osoby dorosłej</h3>
+        </article>
+        <article class="card card--prog">
+          <span class="card__idx">III</span>
+          <h3 class="card__title">Opieka koordynowana</h3>
+        </article>
+      </div>
+
+      <div class="split">
+        <div class="split__item">
+          <h3 class="split__title">Zaopatrzenie w środki pomocnicze</h3>
+          <p>Realizujemy wnioski NFZ w ramach zaopatrzenia w środki pomocnicze.</p>
+          <p class="hours-line">poniedziałek–piątek · 8:00–16:00</p>
+        </div>
+        <div class="split__item">
+          <h3 class="split__title">Szczepienia ochronne</h3>
+          <ul class="ticklist">
+            <li>Przeciw wirusowemu zapaleniu wątroby — szczepionką <b>Euvax</b></li>
+            <li>Przeciw pneumokokom — <b>Prevenar</b></li>
+            <li>Przeciw rotawirusom — <b>Rotarix</b></li>
+            <li>Skojarzone przeciw błonicy, tężcowi, poliomyelitis, zakażeniom Hib oraz wzw B — <b>Infanrix IPV+Hib</b></li>
+          </ul>
+          <p class="note">Szczegółowy kalendarz szczepień na 2026 rok dostępny jest w Punkcie Szczepień.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA POZ ============ -->
+  <section class="section section--poz section--alt" id="poz">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Oferta POZ</p>
+        <h2 class="section__title">Podstawowa Opieka Zdrowotna</h2>
+        <p class="section__intro">Przychodnia świadczy usługi w ramach umowy z NFZ od poniedziałku do piątku w godz. od 8.00 do 18.00. Rejestracja: <a href="tel:+48625802252">62 580 22 52</a>.</p>
+      </div>
+
+      <dl class="factstrip">
+        <div><dt>Pobieranie krwi</dt><dd>codziennie 7:30–11:00</dd></div>
+        <div><dt>Godziny przyjęć</dt><dd>pon–pt 8:00–18:00 · NFZ</dd></div>
+        <div><dt>Gabinet zabiegowy</dt><dd>w godzinach pracy przychodni</dd></div>
+      </dl>
+
+      <p class="leadnote">Po godzinie 18:00 oraz w dni wolne od pracy i święta opiekę medyczną zapewnia <strong>Wojewódzki Szpital Zespolony w Kaliszu</strong>, ul. Poznańska 79 (budynek Pogotowia Ratunkowego), tel. <a href="tel:+48627651654">62 765 16 54</a>.</p>
+
+      <h3 class="subhead">Lekarze rodzinni</h3>
+      <p class="acc-hint">Wybierz lekarza, aby zobaczyć godziny przyjęć.</p>
+      <div class="docacc">
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Paweł Andrzejczak</span><span class="docacc__tag">Internista · Specjalista medycyny rodzinnej</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 8:00–13:00 · wt 13:00–18:00 · śr 8:00–13:00 · czw 8:00–13:00 · pt zamiennie</p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Piotr Lisowski</span><span class="docacc__tag">Specjalista medycyny rodzinnej</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 8:00–13:00 · wt 8:00–13:00 · śr 13:00–18:00 · czw 13:00–18:00 · pt 8:00–13:00</p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Agnieszka Krawczyk-Kubisiak</span><span class="docacc__tag">Specjalista medycyny rodzinnej</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 11:00–16:00 · wt 8:00–13:00 · śr 8:00–13:00 · czw 8:00–13:00 · pt zamiennie</p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Irena Grzeluszka-Tobiasz</span><span class="docacc__tag">Lekarz pediatra</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 9:00–14:00 · wt 9:00–12:30 · śr 11:00–16:00 · czw 13:00–18:00 · pt 9:00–13:00</p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Ewa Marciniak</span><span class="docacc__tag">Specjalista medycyny rodzinnej</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 8:00–13:00 · wt 13:00–18:00 · śr 8:00–13:00 · czw 8:00–13:00 · pt zamiennie</p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__name">Paweł Krzywda</span><span class="docacc__tag">Rezydent medycyny rodzinnej</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">wt 15:00–18:00 · pt 15:00–18:00</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPECJALIŚCI ============ -->
+  <section class="section section--spec" id="specjalisci">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Poradnie specjalistyczne</p>
+        <h2 class="section__title">Prywatne gabinety specjalistyczne</h2>
+        <p class="section__intro">Wybierz specjalistę, aby rozwinąć godziny przyjęć i numer rejestracji.</p>
+      </div>
+
+      <div class="docacc">
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Ortopeda</span><span class="docacc__name">dr n. med. Piotr Wojciechowski</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: wtorki od 18:00</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:500308305">500 308 305</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Neurolog</span><span class="docacc__name">dr n. med. Karolina Tworek</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:500308305">500 308 305</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Kardiolog</span><span class="docacc__name">lek. Agata Serwecińska</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: poniedziałki</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:500308305">500 308 305</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Medycyna Pracy i Transportu</span><span class="docacc__name">lek. Piotr Lisowski</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: poniedziałek–czwartek</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:500308305">500 308 305</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Fizjoterapia uroginekologiczna</span><span class="docacc__name">mgr Aneta Kliber</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:881693188">881 693 188</a></p>
+          </div>
+        </details>
+      </div>
+      <p class="specreg">Rejestracja do w/w lekarzy: poniedziałek–piątek 8:00–16:00, tel. <strong>500 308 305</strong>.</p>
+
+      <h3 class="subhead">Pozostali specjaliści</h3>
+      <div class="docacc">
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Psychiatra</span><span class="docacc__name">lek. Jadwiga Liberowicz-Przybył</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: poniedziałek i środa</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:692685922">692 685 922</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Chirurg naczyniowy</span><span class="docacc__name">dr n. med. Jarosław Kasperczak</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: poniedziałek i czwartek od 16:00</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:607051894">607 051 894</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Pulmonolog</span><span class="docacc__name">lek. Waldemar Bakalarz</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: czwartki</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:500308305">500 308 305</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Poradnia Psychologii Pracy</span><span class="docacc__name">mgr Izabela Płucienniczak</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">pon 8:00–15:00 · czw 12:00–18:00</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:503114595">503 114 595</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Psycholog</span><span class="docacc__name">mgr Justyna Prus-Buczak</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:601775701">601 775 701</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Dietetyk</span><span class="docacc__name">Wiktoria Szczęsna</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:722398007">722 398 007</a></p>
+          </div>
+        </details>
+        <details class="docacc__item">
+          <summary>
+            <span><span class="docacc__field">Masaż leczniczy</span><span class="docacc__name">Gohar Meliksetyan</span></span>
+            <span class="docacc__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="docacc__body">
+            <p class="docacc__hours">Przyjęcia: poniedziałek–piątek od 12:00</p>
+            <p class="docacc__meta">Rejestracja: <a class="docacc__tel" href="tel:880683065">880 683 065</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CENNIK ============ -->
+  <section class="section section--cennik section--alt" id="cennik">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Cennik usług</p>
+        <h2 class="section__title">Świadczenia płatne</h2>
+      </div>
+
+      <div class="pricex">
+        <p class="pricex__hint" id="pxhint">Wybierz świadczenie, aby zobaczyć jego cenę</p>
+        <div class="pricex__nav" role="radiogroup" aria-labelledby="pxhint">
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c1" checked><span>Porada dla pacjenta spoza przychodni</span><span class="sr-only"> — 200,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c2"><span>Orzeczenie dla celów sanitarnych</span><span class="sr-only"> — 50,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c3"><span>Orzeczenie na wniosek pacjenta (ZUS, KRUS)</span><span class="sr-only"> — 50,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c4"><span>Epikryza — firmy ubezpieczeniowe</span><span class="sr-only"> — 200,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c5"><span>Epikryza + wyciąg dokumentacji</span><span class="sr-only"> — 250,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c6"><span>Badanie ciśnienia tętniczego i tętna</span><span class="sr-only"> — 20,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c7"><span>Iniekcja domięśniowa i podskórna</span><span class="sr-only"> — 30,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c8"><span>Iniekcja dożylna</span><span class="sr-only"> — 30,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c9"><span>Zmiana opatrunku, zdjęcie szwów</span><span class="sr-only"> — 30,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c10"><span>Holter ciśnieniowy</span><span class="sr-only"> — 150,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c11"><span>Wykonanie EKG</span><span class="sr-only"> — 50,00 zł</span></label>
+          <label class="pxopt"><input class="pricex__radio" type="radio" name="cennik" id="c12"><span>Druga kopia dokumentacji medycznej</span><span class="sr-only"> — 0,50 zł za stronę</span></label>
+        </div>
+        <div class="pricex__stage" aria-hidden="true">
+          <figure class="pxcard px-1"><span class="pxcard__amt">200,00&nbsp;zł</span><figcaption>Porada lekarska udzielona pacjentowi nie zapisanemu do Przychodni, u którego nie występuje zagrożenie zdrowia lub życia</figcaption></figure>
+          <figure class="pxcard px-2"><span class="pxcard__amt">50,00&nbsp;zł</span><figcaption>Orzeczenie dla celów sanitarnych z wpisem do książeczki</figcaption></figure>
+          <figure class="pxcard px-3"><span class="pxcard__amt">50,00&nbsp;zł</span><figcaption>Orzeczenie lekarskie na wniosek pacjenta: dla celów rentowych, ZUS, KRUS</figcaption></figure>
+          <figure class="pxcard px-4"><span class="pxcard__amt">200,00&nbsp;zł</span><figcaption>Epikryza — komercyjne firmy ubezpieczeniowe</figcaption></figure>
+          <figure class="pxcard px-5"><span class="pxcard__amt">250,00&nbsp;zł</span><figcaption>Epikryza + wyciąg dokumentacji dla firm komercyjnych</figcaption></figure>
+          <figure class="pxcard px-6"><span class="pxcard__amt">20,00&nbsp;zł</span><figcaption>Badanie ciśnienia tętniczego i tętna</figcaption></figure>
+          <figure class="pxcard px-7"><span class="pxcard__amt">30,00&nbsp;zł</span><figcaption>Iniekcja domięśniowa i podskórna</figcaption></figure>
+          <figure class="pxcard px-8"><span class="pxcard__amt">30,00&nbsp;zł</span><figcaption>Iniekcja dożylna</figcaption></figure>
+          <figure class="pxcard px-9"><span class="pxcard__amt">30,00&nbsp;zł</span><figcaption>Zmiana opatrunku, zdjęcie szwów</figcaption></figure>
+          <figure class="pxcard px-10"><span class="pxcard__amt">150,00&nbsp;zł</span><figcaption>Holter ciśnieniowy</figcaption></figure>
+          <figure class="pxcard px-11"><span class="pxcard__amt">50,00&nbsp;zł</span><figcaption>Wykonanie EKG</figcaption></figure>
+          <figure class="pxcard px-12"><span class="pxcard__amt">0,50&nbsp;zł</span><figcaption>Sporządzanie drugiej kopii dokumentacji medycznej (za stronę)</figcaption></figure>
+        </div>
+      </div>
+
+      <p class="note">Świadczenia wymienione w ustawie o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych, realizowane na podstawie kontraktu z NFZ, są bezpłatne.</p>
+    </div>
+  </section>
+
+  <!-- ============ LABORATORIUM ============ -->
+  <section class="section section--lab" id="laboratorium">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Laboratorium</p>
+        <h2 class="section__title">Punkt pobrań</h2>
+      </div>
+      <dl class="factstrip">
+        <div><dt>Godziny pobrań</dt><dd>pon–pt 7:30–11:00</dd></div>
+        <div><dt>Odbiór wyników</dt><dd>następnego dnia od 14:00</dd></div>
+        <div><dt>Badania płatne</dt><dd>dostępne na miejscu</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ WAŻNE INFORMACJE ============ -->
+  <section class="section section--wazne section--alt" id="wazne">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Warto wiedzieć</p>
+        <h2 class="section__title">Ważne informacje</h2>
+      </div>
+      <div class="callout__row">
+        <article class="info-card">
+          <p class="info-card__k">Opieka nocna i świąteczna</p>
+          <p class="info-card__v">Po godzinie 18:00 oraz w dni wolne od pracy i święta opiekę medyczną zapewnia Wojewódzki Szpital Zespolony w Kaliszu, ul. Poznańska 79 (budynek Pogotowia Ratunkowego).</p>
+          <a class="info-card__tel" href="tel:+48627651654">62 765 16 54</a>
+        </article>
+        <article class="info-card">
+          <p class="info-card__k">Teleplatforma Pierwszego Kontaktu</p>
+          <p class="info-card__v">Bezpłatna pomoc medyczna (TPK) od poniedziałku do piątku w godz. 18:00–8:00 dnia następnego.</p>
+          <a class="info-card__tel" href="tel:800137200">800 137 200</a>
+        </article>
+        <article class="info-card">
+          <p class="info-card__k">Transport sanitarny</p>
+          <p class="info-card__v">Zamawianie transportu sanitarnego — firma „Art &amp; Med".</p>
+          <a class="info-card__tel" href="tel:+48625941112">62 594 11 12</a>
+          <a class="info-card__tel" href="tel:+48660703333">660 703 333</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECEPTA ============ -->
+  <section class="section section--recepta" id="recepta">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Zamów receptę</p>
+        <h2 class="section__title">Recepta bez wizyty (e-recepta)</h2>
+        <p class="section__intro">Zamów receptę na leki stosowane w leczeniu chorób przewlekłych — bez konieczności wizyty w przychodni.</p>
+      </div>
+      <div class="split split--wide">
+        <div class="split__item">
+          <p>Zamówioną e-receptę zrealizujesz w dowolnej aptece na podstawie SMS-a z kodem umożliwiającym odbiór leków.</p>
+          <dl class="hero__facts hero__facts--recepta">
+            <div class="fact"><dt>Godziny</dt><dd>pon–pt 8:00–18:00</dd></div>
+            <div class="fact"><dt>Telefon</dt><dd><a href="tel:+48625802252">+48 62 580 22 52</a></dd></div>
+          </dl>
+          <details class="disclosure">
+            <summary>Na czym polega e-recepta?</summary>
+            <div class="disclosure__body">
+              <p>Pacjenci ARSMEDICA mogą korzystać z e-recepty — wygodnego rozwiązania umożliwiającego zamawianie recepty na przepisane przez lekarza leki bez konieczności wizyty w przychodni.</p>
+              <p>Zamówione e-recepty można zrealizować w dowolnej aptece na podstawie otrzymanego SMS-a z odpowiednim kodem umożliwiającym odbiór leków. Usługa skierowana jest do pacjentów, którzy przyjmują leki stosowane w leczeniu chorób przewlekłych.</p>
+              <p>W celu otrzymania e-recepty prosimy o podanie aktualnego numeru telefonu oraz adresu e-mail.</p>
+            </div>
+          </details>
+        </div>
+        <div class="split__item">
+          <h3 class="subhead">Dane potrzebne do zamówienia</h3>
+          <ul class="fieldlist">
+            <li>Imię i nazwisko</li>
+            <li>PESEL</li>
+            <li>Telefon · adres e-mail</li>
+            <li>Nazwa i forma leku (tabletki, kapsułki, syrop, maść…)</li>
+            <li>Ilość substancji czynnej (np. 40 mg)</li>
+            <li>Ilość leku w opakowaniu i liczba opakowań</li>
+            <li>Termin odbioru recepty</li>
+          </ul>
+          <details class="disclosure">
+            <summary>Wymagane oświadczenia</summary>
+            <div class="disclosure__body">
+              <ul>
+                <li>Oświadczam, że aktualnie nie przebywam w zakładzie leczniczym (szpital, sanatorium, rehabilitacja dzienna, zakład opiekuńczo-leczniczy).</li>
+                <li>Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w formularzu dla potrzeb niezbędnych do realizacji procesu e-recepty, zgodnie z obowiązującymi przepisami o ochronie danych osobowych.</li>
+              </ul>
+            </div>
+          </details>
+          <a class="btn btn--accent" href="tel:+48625802252">Zadzwoń, aby zamówić</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section class="section section--kontakt section--alt" id="kontakt">
+    <div class="wrap split split--wide">
+      <div class="split__item">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="section__title">ARSMEDICA CENTRUM</h2>
+        <p class="kontakt__desc">Poradnia Podstawowej Opieki Zdrowotnej</p>
+        <dl class="contact">
+          <div class="fact"><dt>Adres</dt><dd>ul. Babina 3, 62-800 Kalisz</dd></div>
+          <div class="fact"><dt>Rejestracja POZ</dt><dd><a href="tel:+48625802252">62 580 22 52</a> · <a href="tel:+48573335284">573 335 284</a></dd></div>
+          <div class="fact"><dt>Rejestracja specjaliści</dt><dd><a href="tel:500308305">500 308 305</a></dd></div>
+          <div class="fact"><dt>Gabinety</dt><dd>lekarskie i zabiegowy · pon–pt 7:30–18:00</dd></div>
+        </dl>
+      </div>
+      <div class="split__item">
+        <div id="map" class="mapembed" role="img" aria-label="Mapa: ARSMEDICA, ul. Babina 3, Kalisz"></div>
+        <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=51.7656051,18.0908254" target="_blank" rel="noopener">Wyznacz trasę w Google Maps <svg class="btn__ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFORMACJE PRAWNE ============ -->
+  <section class="section section--prawne" id="prawne">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="eyebrow">Informacje prawne</p>
+        <h2 class="section__title">RODO, prawa pacjenta i projekt grantowy</h2>
+      </div>
+
+      <details class="disclosure">
+        <summary>Klauzula informacyjna RODO</summary>
+        <div class="disclosure__body">
+          <p><strong>Administrator danych:</strong> „ARSMEDICA" Spółka Partnerska Lekarzy, ul. Babina 3, 62-800 Kalisz.</p>
+          <p><strong>Inspektor Ochrony Danych:</strong> <a href="mailto:iod.arsmedica@wp.pl">iod.arsmedica@wp.pl</a></p>
+          <p>Dane osobowe przetwarzane są w celu świadczenia usług medycznych, prowadzenia dokumentacji medycznej oraz wypełnienia obowiązków prawnych ciążących na administratorze. Podanie danych jest wymogiem ustawowym — ich niepodanie uniemożliwia udzielenie świadczenia.</p>
+          <p>Pacjent ma prawo dostępu do swoich danych i ich sprostowania oraz prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych. Dane nie są przekazywane do państw trzecich i nie podlegają zautomatyzowanemu podejmowaniu decyzji.</p>
+          <p class="disclosure__note">Pełna treść klauzuli informacyjnej dostępna jest w przychodni oraz na stronie <a href="https://e-arsmedica.pl/rodo" target="_blank" rel="noopener">e-arsmedica.pl/rodo</a>.</p>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary>Prawa i obowiązki pacjenta</summary>
+        <div class="disclosure__body">
+          <ul class="doclinks">
+            <li><a href="https://e-arsmedica.pl/prawa-i-obowiazki-pacjenta" target="_blank" rel="noopener">Prawa i obowiązki pacjenta</a></li>
+            <li><a href="https://e-arsmedica.pl/prawa-i-obowiazki-pacjenta" target="_blank" rel="noopener">Świadczenia udzielane poza kolejnością — uprawnienia</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary>Projekt grantowy — wsparcie POZ</summary>
+        <div class="disclosure__body">
+          <p>„ARSMEDICA" Spółka Partnerska Lekarzy zrealizowała projekt dofinansowany z Europejskiego Funduszu Rozwoju Regionalnego w ramach Programu „Fundusze Europejskie na Infrastrukturę, Klimat, Środowisko 2021–2027".</p>
+          <p><strong>Wysokość grantu dla Arsmedica:</strong> 448 959,87 zł.</p>
+          <p>W ramach projektu poradnia została doposażona w nowoczesny sprzęt medyczny, diagnostyczny i informatyczny, co pozwoliło zwiększyć dostępność diagnostyki, wspierać wczesne wykrywanie chorób przewlekłych oraz poprawić bezpieczeństwo danych pacjentów.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap site-footer__in">
+    <div class="site-footer__brand">
+      <span class="brand__name">ARSMEDICA</span>
+      <p class="legal">„ARSMEDICA" Spółka Partnerska Lekarzy<br>Andrzejczak, Krawczyk-Kubisiak, Lisowski<br>ul. Babina 3, 62-800 Kalisz</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Stopka">
+      <a href="#o-nas">O nas</a>
+      <a href="#profilaktyka">Profilaktyka</a>
+      <a href="#poz">Oferta POZ</a>
+      <a href="#specjalisci">Specjaliści</a>
+      <a href="#cennik">Cennik usług</a>
+      <a href="#laboratorium">Laboratorium</a>
+      <a href="#recepta">Zamów receptę</a>
+      <a href="#wazne">Ważne informacje</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#prawne">RODO</a>
+      <a href="#prawne">Prawa i obowiązki pacjenta</a>
+      <a href="#prawne">Projekt grantowy</a>
+    </nav>
+  </div>
+  <div class="wrap site-footer__base">
+    <span>© 2026 ARSMEDICA · Kalisz</span>
+    <span>Poradnia POZ · Umowa z NFZ</span>
+  </div>
+</footer>
+
+<!-- ============ FLICKER CONTROL ============ -->
+<div class="flick" id="flick" role="region" aria-label="Zmiana wyglądu strony">
+  <div class="flick__group">
+    <span class="flick__cap">Styl</span>
+    <button class="flick__btn" data-act="style-prev" aria-label="Poprzedni styl">‹</button>
+    <span class="flick__read"><span class="flick__name" id="styleName">Informacyjny</span><span class="flick__num" id="styleNum">01 / 11</span></span>
+    <button class="flick__btn" data-act="style-next" aria-label="Następny styl">›</button>
+  </div>
+  <span class="flick__sep" aria-hidden="true"></span>
+  <div class="flick__group">
+    <span class="flick__cap">Kolor</span>
+    <button class="flick__btn" data-act="color-prev" aria-label="Poprzedni kolor">‹</button>
+    <span class="flick__read"><span class="flick__swatch" id="colorSwatch"></span><span class="flick__name" id="colorName">Czerwień</span><span class="flick__num" id="colorNum">01 / 10</span></span>
+    <button class="flick__btn" data-act="color-next" aria-label="Następny kolor">›</button>
+  </div>
+  <span class="flick__sep" aria-hidden="true"></span>
+  <button class="flick__shuffle" data-act="shuffle" aria-label="Losuj wygląd">Losuj</button>
+</div>
+
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

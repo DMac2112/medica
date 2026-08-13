@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Node
+node_modules/
+
+# Local QA / temp artifacts (Playwright, screenshots)
+.playwright-mcp/
+/scratchpad/
+/*.png

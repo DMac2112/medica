@@ -1,0 +1,357 @@
+/* =========================================================================
+   ARSMEDICA — styles.css
+   11 distinct design languages. Each overrides type / shape / rhythm tokens
+   and restructures key components + adds a signature. Colorways stay
+   orthogonal (they only touch palette tokens), so every style × colorway
+   combination stays legible.
+   ========================================================================= */
+
+/* ========================================================================
+   00 · INFORMACYJNY — the calm, information-first default. Public Sans only.
+   Large legible type, high contrast, phone-forward utility bar, and the
+   practice's own signature: an accent LEFT-BORDER on every card + a short
+   solid accent underline beneath headings (both quoted from e-arsmedica.pl).
+   Built for older patients: nothing to decode, nothing overwhelming.
+   ======================================================================== */
+:root[data-style="informacyjny"]{
+  --font-display:'Public Sans',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:8px; --radius-lg:10px; --btn-radius:8px; --card-radius:10px;
+  --shadow:none; --card-border:1px solid var(--line);
+  --w-semi:700; --w-bold:800;
+  --lead:1.7; --lead-tight:1.15; --track-eyebrow:.1em; --measure:66ch;
+  --step-0:clamp(1.125rem, 1rem + .45vw, 1.25rem);   /* 18→20px body floor — older-reader legibility */
+  --card-pad:clamp(1.4rem, 2.6vw, 2.1rem);
+  --section-y:clamp(3.5rem, 7vw, 6rem);
+}
+[data-style="informacyjny"] body{ font-size:var(--step-0); }
+[data-style="informacyjny"] .hero{ padding-block:clamp(2.6rem,5vw,4.2rem) clamp(2rem,4vw,3rem); }
+[data-style="informacyjny"] .hero__title{ font-weight:800; font-size:var(--step-4); letter-spacing:-.02em; max-width:20ch; }
+[data-style="informacyjny"] .hero__title-em{ color:var(--accent); }
+[data-style="informacyjny"] .hero__lead{ font-size:clamp(1.15rem,1rem + .6vw,1.4rem); color:var(--ink); max-width:56ch; }
+[data-style="informacyjny"] .btn{ font-size:1.05rem; padding:.95rem 1.6rem; }
+[data-style="informacyjny"] .eyebrow{ color:var(--muted); font-weight:800; }
+/* short solid accent underline — the "Informacja" rule from their site */
+[data-style="informacyjny"] .section__title,[data-style="informacyjny"] .hero__title{ position:relative; }
+[data-style="informacyjny"] .section__title{ font-weight:800; letter-spacing:-.015em; padding-bottom:.7rem; }
+[data-style="informacyjny"] .section__title::after{ content:""; position:absolute; left:0; bottom:0; width:3.2rem; height:4px; background:var(--accent); border-radius:2px; }
+/* phone-forward utility bar */
+[data-style="informacyjny"] .hero__facts{ background:var(--surface); border:1px solid var(--line); border-left:6px solid var(--accent); border-radius:10px; padding:1.3rem clamp(1.2rem,2.5vw,2rem); gap:clamp(1.4rem,4vw,3.5rem); margin-top:2.4rem; }
+[data-style="informacyjny"] .hero__facts .fact dt{ font-size:.72rem; }
+[data-style="informacyjny"] .hero__facts .fact dd{ font-size:1.18rem; font-weight:700; }
+/* Quiet white cards on the paper background — the red bar is reserved (below)
+   for the few things that should pull the eye, so it isn't wallpaper. */
+[data-style="informacyjny"] .card,[data-style="informacyjny"] .doc{ border:1px solid var(--line); border-radius:var(--card-radius); background:var(--surface); }
+/* The one place the red left-border stays: the 3 flagship NFZ program cards. */
+[data-style="informacyjny"] .card--prog{ border-left:5px solid var(--accent); }
+[data-style="informacyjny"] .card__idx{ font-weight:800; color:var(--accent); }
+[data-style="informacyjny"] .card__title,[data-style="informacyjny"] .doc__name{ font-weight:700; font-size:var(--step-1); }
+[data-style="informacyjny"] .card p,[data-style="informacyjny"] .split__item > p{ color:var(--ink); }
+[data-style="informacyjny"] .card__ic{ background:var(--accent-soft); padding:8px; width:42px; height:42px; box-sizing:content-box; border-radius:8px; }
+[data-style="informacyjny"] .spec{ border-left:3px solid var(--line); padding-left:1rem; }
+[data-style="informacyjny"] .spec__field{ color:var(--muted); }
+[data-style="informacyjny"] .spec__name{ font-weight:700; }
+[data-style="informacyjny"] .price td{ font-size:1.05rem; }
+[data-style="informacyjny"] .price__val{ font-weight:800; }
+[data-style="informacyjny"] .nav__links a:hover,[data-style="informacyjny"] .site-footer__nav a:hover{ text-decoration:underline; text-underline-offset:3px; }
+[data-style="informacyjny"] .fieldlist li{ border-left:3px solid var(--line); }
+[data-style="informacyjny"] .subhead{ color:var(--ink); }
+
+/* ========================================================================
+   01 · APTEKA KLASYCZNA — pharmacopeia editorial. Fraunces + Newsreader.
+   Book-like measure, hairline frames, Roman-numeral index, italic emphasis.
+   ======================================================================== */
+:root[data-style="apteka"]{
+  --font-display:'Fraunces',Georgia,serif; --font-body:'Newsreader',Georgia,serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:3px; --radius-lg:4px; --btn-radius:3px; --card-radius:4px;
+  --shadow:none; --card-pad:clamp(1.4rem,2.6vw,2rem);
+  --w-semi:600; --lead:1.62; --measure:64ch; --track-eyebrow:.22em;
+}
+[data-style="apteka"] .hero__title{ font-weight:600; letter-spacing:-.012em; }
+[data-style="apteka"] .hero__title-em{ font-style:italic; font-weight:400; }
+[data-style="apteka"] .section__title{ font-weight:600; letter-spacing:-.01em; }
+[data-style="apteka"] .section__head{ border-top:2px solid var(--ink); padding-top:1.1rem; }
+[data-style="apteka"] .card{ background:var(--surface); border:1px solid var(--line); box-shadow:inset 0 0 0 3px var(--surface), inset 0 0 0 4px color-mix(in srgb,var(--accent) 22%, var(--surface)); }
+[data-style="apteka"] .card__idx{ font-style:italic; }
+[data-style="apteka"] .spec__name{ font-style:italic; }
+[data-style="apteka"] .eyebrow{ font-weight:700; }
+[data-style="apteka"] .hero__deco{ background:linear-gradient(90deg,transparent 0 50%, color-mix(in srgb,var(--accent) 8%,transparent) 50%); opacity:.0; }
+
+/* ========================================================================
+   02 · KLINIKA SZWAJCARSKA — International Typographic. Archivo grotesque.
+   Strict grid, flush-left, big margin numbers, zero radius, one accent block.
+   ======================================================================== */
+:root[data-style="szwajcarska"]{
+  --font-display:'Archivo',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Archivo',sans-serif;
+  --radius:0; --radius-lg:0; --btn-radius:0; --card-radius:0; --shadow:none;
+  --w-semi:700; --w-bold:800; --lead:1.55; --lead-tight:1.02;
+  --track-display:-.02em; --track-eyebrow:.18em; --section-y:clamp(3rem,7vw,6rem);
+  --card-border:1px solid var(--ink);
+}
+[data-style="szwajcarska"] main{ counter-reset:sec; }
+[data-style="szwajcarska"] .section{ counter-increment:sec; }
+[data-style="szwajcarska"] .hero__title{ font-weight:800; text-transform:uppercase; letter-spacing:-.03em; line-height:.98; }
+[data-style="szwajcarska"] .section__head{ display:grid; grid-template-columns:auto 1fr; gap:1.4rem; align-items:start; max-width:none; border-top:2px solid var(--ink); padding-top:1rem; }
+[data-style="szwajcarska"] .section__head::before{ content:counter(sec,decimal-leading-zero); font-family:var(--font-display); font-weight:800; font-size:var(--step-2); color:var(--accent); line-height:1; }
+[data-style="szwajcarska"] .section__title{ text-transform:uppercase; letter-spacing:-.02em; font-weight:800; }
+[data-style="szwajcarska"] .eyebrow{ font-weight:700; }
+[data-style="szwajcarska"] .card{ border:1px solid var(--ink); }
+[data-style="szwajcarska"] .card:hover{ background:var(--accent); color:var(--accent-ink); }
+[data-style="szwajcarska"] .card:hover :is(.card__title,.card__meta,p),[data-style="szwajcarska"] .card:hover .card__ic{ color:var(--accent-ink); }
+[data-style="szwajcarska"] .card--prog:nth-child(2){ background:var(--accent-soft); }
+[data-style="szwajcarska"] .btn{ text-transform:uppercase; letter-spacing:.04em; font-weight:700; }
+[data-style="szwajcarska"] .doc{ border:1px solid var(--ink); }
+[data-style="szwajcarska"] .spec__name{ font-family:var(--font-display); font-weight:600; }
+
+/* ========================================================================
+   03 · CIEPŁY HUMANIZM — reassuring clinic. Public Sans + Bricolage.
+   Large radii, soft shadows, pill CTAs, airy spacing, borderless cards.
+   ======================================================================== */
+:root[data-style="humanizm"]{
+  --font-display:'Bricolage Grotesque',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:18px; --radius-lg:26px; --btn-radius:100px; --card-radius:26px;
+  --shadow:0 14px 40px -24px rgba(20,30,24,.28); --card-border:1px solid transparent;
+  --card-fill:var(--surface); --w-semi:600; --lead:1.68; --gap:clamp(1.1rem,2.4vw,1.8rem);
+  --section-y:clamp(4rem,9vw,8rem); --track-eyebrow:.14em;
+}
+[data-style="humanizm"] .hero{ }
+[data-style="humanizm"] .hero__in{ background:var(--accent-soft); border-radius:36px; padding:clamp(1.8rem,5vw,3.6rem); }
+[data-style="humanizm"] .hero__title{ font-weight:700; letter-spacing:-.02em; }
+[data-style="humanizm"] .hero__facts{ border-top-color:color-mix(in srgb,var(--ink) 14%,transparent); }
+[data-style="humanizm"] .card{ box-shadow:var(--shadow); border:1px solid color-mix(in srgb,var(--ink) 7%,transparent); }
+[data-style="humanizm"] .card:hover{ transform:translateY(-3px); box-shadow:0 22px 50px -26px rgba(20,30,24,.36); }
+[data-style="humanizm"] .doc{ box-shadow:var(--shadow); border:1px solid color-mix(in srgb,var(--ink) 7%,transparent); border-radius:22px; }
+[data-style="humanizm"] .card__ic{ background:var(--accent-soft); padding:9px; border-radius:14px; width:44px; height:44px; box-sizing:content-box; }
+[data-style="humanizm"] .section__title{ font-weight:700; letter-spacing:-.015em; }
+[data-style="humanizm"] .fieldlist li{ border-radius:14px; }
+
+/* ========================================================================
+   04 · REDAKCJA ZDROWIA — health magazine. Fraunces masthead + Newsreader.
+   Dateline, giant headline, drop cap, dotted-leader index, ruled tables.
+   ======================================================================== */
+:root[data-style="redakcja"]{
+  --font-display:'Fraunces',Georgia,serif; --font-body:'Newsreader',Georgia,serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:0; --radius-lg:0; --btn-radius:0; --card-radius:0; --shadow:none;
+  --w-semi:600; --w-bold:900; --lead:1.6; --lead-tight:1.0; --track-eyebrow:.2em;
+}
+[data-style="redakcja"] .hero{ border-top:4px solid var(--ink); padding-top:1.4rem; }
+[data-style="redakcja"] .hero__eyebrow{ display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:.7rem; }
+[data-style="redakcja"] .hero__eyebrow::after{ content:"Kalisz · Wielkopolska"; color:var(--muted); }
+[data-style="redakcja"] .hero__title{ font-weight:900; font-size:var(--step-6); letter-spacing:-.02em; max-width:16ch; }
+[data-style="redakcja"] .hero__title-em{ font-style:italic; font-weight:400; }
+[data-style="redakcja"] .hero__lead{ font-style:italic; font-size:var(--step-2); color:var(--ink); border-left:3px solid var(--accent); padding-left:1.2rem; }
+[data-style="redakcja"] .section__head{ border-bottom:3px double var(--ink); padding-bottom:.8rem; }
+[data-style="redakcja"] .section__title{ font-weight:900; }
+[data-style="redakcja"] .section--poz .section__intro::first-letter{ font-family:var(--font-display); font-weight:900; float:left; font-size:3.4em; line-height:.72; padding:.06em .12em 0 0; color:var(--accent); }
+[data-style="redakcja"] .card{ border-bottom:1px solid var(--ink); border-top:1px solid var(--ink); padding-left:0; padding-right:0; }
+[data-style="redakcja"] .speclist{ display:block; border-top:2px solid var(--ink); }
+[data-style="redakcja"] .spec{ border-bottom:1px solid var(--line); }
+[data-style="redakcja"] .spec::after{ content:""; flex:1; border-bottom:1.5px dotted var(--muted); margin:0 .2rem .35rem; order:1; }
+[data-style="redakcja"] .spec__name{ order:2; }
+[data-style="redakcja"] .price__val{ font-family:var(--font-display); font-style:italic; }
+
+/* ========================================================================
+   05 · MODERNIZM — Polish constructivist / Bauhaus. Space Grotesk.
+   Primary geometric shapes, colour-blocked cards, 2px hard rules.
+   ======================================================================== */
+:root[data-style="modernizm"]{
+  --font-display:'Space Grotesk',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Space Grotesk',sans-serif;
+  --radius:0; --radius-lg:0; --btn-radius:0; --card-radius:0; --shadow:none;
+  --w-semi:600; --w-bold:700; --lead:1.55; --track-display:-.02em; --track-eyebrow:.16em;
+  --card-border:2px solid var(--ink);
+}
+[data-style="modernizm"] .hero{ overflow:visible; }
+[data-style="modernizm"] .hero__title{ font-weight:700; letter-spacing:-.03em; }
+[data-style="modernizm"] .hero__deco{ display:block; background:radial-gradient(circle at calc(100% - 90px) 92px, var(--accent) 0 58px, transparent 59px); }
+[data-style="modernizm"] .hero__deco::before{ content:""; position:absolute; right:172px; top:44px; width:66px; height:66px; background:var(--ink); }
+[data-style="modernizm"] .hero__deco::after{ content:""; position:absolute; right:66px; top:172px; width:0; height:0; border-left:42px solid transparent; border-right:42px solid transparent; border-bottom:74px solid color-mix(in srgb,var(--accent) 45%,var(--surface)); }
+[data-style="modernizm"] .section__title{ font-weight:700; letter-spacing:-.02em; }
+[data-style="modernizm"] .section__title::before{ content:""; display:inline-block; width:.62em; height:.62em; background:var(--accent); margin-right:.5em; vertical-align:.02em; }
+[data-style="modernizm"] .card{ border:2px solid var(--ink); }
+[data-style="modernizm"] .card--prog{ color:var(--accent-ink); }
+[data-style="modernizm"] .card--prog:nth-child(1){ background:var(--accent); }
+[data-style="modernizm"] .card--prog:nth-child(2){ background:var(--ink); }
+[data-style="modernizm"] .card--prog:nth-child(3){ background:color-mix(in srgb,var(--accent) 60%, var(--ink)); }
+[data-style="modernizm"] .card--prog :is(.card__title,.card__meta){ color:var(--accent-ink); }
+[data-style="modernizm"] .card--prog .card__idx{ color:var(--accent-ink); opacity:.85; font-weight:700; font-size:var(--step-4); }
+[data-style="modernizm"] .doc{ border:2px solid var(--ink); }
+[data-style="modernizm"] .btn--accent{ border:2px solid var(--ink); }
+[data-style="modernizm"] .spec__name{ font-family:var(--font-display); font-weight:600; }
+@media (max-width:760px){ [data-style="modernizm"] .hero__deco{ display:none; } }
+
+/* ========================================================================
+   06 · INSTYTUT — neoclassical institution. Instrument Serif, centred axis.
+   Monogram crest, thin double rules, small-caps labels. Stately restraint.
+   ======================================================================== */
+:root[data-style="instytut"]{
+  --font-display:'Instrument Serif',Georgia,serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:0; --radius-lg:0; --btn-radius:0; --card-radius:0; --shadow:none;
+  --w-semi:400; --lead:1.7; --track-eyebrow:.28em; --measure:60ch;
+}
+[data-style="instytut"] .hero__in{ text-align:center; }
+[data-style="instytut"] .hero__in::before{ content:""; display:inline-block; width:64px; height:64px; margin-bottom:1.2rem;
+  background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M18 44 L26 20 L32 38 L38 20 L46 44 M22 36 H36' fill='none' stroke='black' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M18 44 L26 20 L32 38 L38 20 L46 44 M22 36 H36' fill='none' stroke='black' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+[data-style="instytut"] .hero__title{ font-weight:400; font-size:var(--step-6); }
+[data-style="instytut"] .hero__title,[data-style="instytut"] .hero__lead{ margin-left:auto; margin-right:auto; }
+[data-style="instytut"] .hero__cta{ justify-content:center; }
+[data-style="instytut"] .hero__facts{ justify-content:center; text-align:center; }
+[data-style="instytut"] .section__head{ text-align:center; margin-left:auto; margin-right:auto; }
+[data-style="instytut"] .section__intro{ margin-left:auto; margin-right:auto; }
+[data-style="instytut"] .eyebrow::before,[data-style="instytut"] .eyebrow::after{ content:"—"; margin:0 .6em; color:var(--line); }
+[data-style="instytut"] .section__title{ font-weight:400; }
+[data-style="instytut"] .card{ text-align:center; border-top:2px solid var(--accent); }
+[data-style="instytut"] .card__ic{ margin-inline:auto; }
+[data-style="instytut"] .doc{ text-align:center; }
+[data-style="instytut"] .spec{ border-bottom:1px solid var(--line); }
+[data-style="instytut"] .spec__name{ font-weight:400; }
+
+/* ========================================================================
+   07 · KOORDYNACJA — coordinated-care dashboard. Space Grotesk + Plex Mono.
+   Graph-paper field, mono data readouts, panel headers, status dot.
+   ======================================================================== */
+:root[data-style="koordynacja"]{
+  --font-display:'Space Grotesk',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'IBM Plex Mono',monospace;
+  --radius:6px; --radius-lg:10px; --btn-radius:6px; --card-radius:10px;
+  --shadow:0 1px 0 var(--line); --w-semi:600; --track-eyebrow:.08em; --uc-eyebrow:none;
+}
+[data-style="koordynacja"] body,
+body[data-koord]{ }
+[data-style="koordynacja"] .hero,[data-style="koordynacja"] .section{ background-image:radial-gradient(color-mix(in srgb,var(--ink) 9%,transparent) 1px, transparent 1px); background-size:22px 22px; }
+[data-style="koordynacja"] .eyebrow{ font-family:'IBM Plex Mono',monospace; text-transform:none; }
+[data-style="koordynacja"] .hero__eyebrow::before{ content:"● "; color:#2f9e63; }
+[data-style="koordynacja"] .hero__title{ font-weight:600; letter-spacing:-.02em; }
+[data-style="koordynacja"] .fact dt{ font-family:'IBM Plex Mono',monospace; }
+[data-style="koordynacja"] .fact dd{ font-family:'IBM Plex Mono',monospace; font-weight:600; }
+[data-style="koordynacja"] .card{ background:var(--surface); border:1px solid var(--line); padding-top:calc(var(--card-pad) + 1.6rem); }
+[data-style="koordynacja"] .card::before{ content:"MODUŁ"; position:absolute; top:0; left:0; right:0; padding:.4rem var(--card-pad); font-family:'IBM Plex Mono',monospace; font-size:.62rem; letter-spacing:.12em; color:var(--muted); border-bottom:1px solid var(--line); background:var(--surface-2); }
+[data-style="koordynacja"] .section--programy .card::before{ content:"PROGRAM NFZ"; }
+[data-style="koordynacja"] .section--lab .card::before{ content:"LABORATORIUM"; }
+[data-style="koordynacja"] .card__idx{ font-family:var(--font-display); }
+[data-style="koordynacja"] .doc{ border:1px solid var(--line); }
+[data-style="koordynacja"] .doc__name{ font-family:var(--font-display); }
+[data-style="koordynacja"] .price__name{ font-family:var(--font-body); }
+[data-style="koordynacja"] .section__title{ font-weight:600; letter-spacing:-.015em; }
+[data-style="koordynacja"] .btn{ font-family:'IBM Plex Mono',monospace; }
+
+/* ========================================================================
+   08 · ZIELNIK — herbarium. Fraunces italic + Newsreader.
+   Botanical sprig motif (masked), lowercase serif eyebrows, leaf bullets.
+   ======================================================================== */
+:root[data-style="zielnik"]{
+  --font-display:'Fraunces',Georgia,serif; --font-body:'Newsreader',Georgia,serif;
+  --font-eyebrow:'Newsreader',serif;
+  --radius:8px; --radius-lg:10px; --btn-radius:100px; --card-radius:10px;
+  --shadow:0 10px 34px -26px rgba(20,30,24,.3); --w-semi:500; --lead:1.66;
+  --track-eyebrow:.02em; --uc-eyebrow:none; --measure:62ch;
+  --card-border:1px solid var(--line);
+}
+[data-style="zielnik"] .eyebrow{ font-style:italic; font-size:1.02rem; color:var(--accent); letter-spacing:0; }
+[data-style="zielnik"] .hero__title{ font-style:italic; font-weight:400; letter-spacing:-.01em; }
+[data-style="zielnik"] .hero__title-em{ font-style:normal; font-weight:500; }
+[data-style="zielnik"] .hero{ position:relative; }
+[data-style="zielnik"] .hero__deco{ display:block; right:auto; width:min(30vw,240px); left:auto; }
+[data-style="zielnik"] .hero__deco{ background:var(--accent); opacity:.5; position:absolute; top:0; right:clamp(1rem,5vw,4rem); bottom:0; width:200px;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 220'%3E%3Cg fill='black'%3E%3Crect x='38' y='6' width='3' height='210'/%3E%3Cpath d='M39 60 C18 52 10 30 15 12 C40 20 46 44 39 60Z'/%3E%3Cpath d='M40 96 C62 88 70 66 65 48 C40 56 34 80 40 96Z'/%3E%3Cpath d='M39 134 C18 126 10 104 15 86 C40 94 46 118 39 134Z'/%3E%3Cpath d='M40 172 C62 164 70 142 65 124 C40 132 34 156 40 172Z'/%3E%3C/g%3E%3C/svg%3E") top center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 220'%3E%3Cg fill='black'%3E%3Crect x='38' y='6' width='3' height='210'/%3E%3Cpath d='M39 60 C18 52 10 30 15 12 C40 20 46 44 39 60Z'/%3E%3Cpath d='M40 96 C62 88 70 66 65 48 C40 56 34 80 40 96Z'/%3E%3Cpath d='M39 134 C18 126 10 104 15 86 C40 94 46 118 39 134Z'/%3E%3Cpath d='M40 172 C62 164 70 142 65 124 C40 132 34 156 40 172Z'/%3E%3C/g%3E%3C/svg%3E") top center/contain no-repeat; }
+[data-style="zielnik"] .section__title{ font-style:italic; font-weight:400; }
+[data-style="zielnik"] .card__title,[data-style="zielnik"] .split__title,[data-style="zielnik"] .doc__name{ font-style:italic; font-weight:500; }
+[data-style="zielnik"] .ticklist li::before{ border-radius:0 70% 0 70%; border-width:0; background:var(--accent); width:.6rem; height:.6rem; top:.5em; }
+[data-style="zielnik"] .spec__field{ font-family:var(--font-body); font-style:italic; text-transform:none; letter-spacing:0; font-weight:600; font-size:.95rem; }
+[data-style="zielnik"] .spec__name{ font-style:italic; }
+@media (max-width:760px){ [data-style="zielnik"] .hero__deco{ display:none; } }
+
+/* ========================================================================
+   09 · FORMULARZ — official medical form / skierowanie. Archivo + Plex Mono.
+   Field framing, numbered sections, checkbox rows, rubber-stamp signature.
+   ======================================================================== */
+:root[data-style="formularz"]{
+  --font-display:'Archivo',system-ui,sans-serif; --font-body:'IBM Plex Mono',monospace;
+  --font-eyebrow:'IBM Plex Mono',monospace;
+  --radius:0; --radius-lg:0; --btn-radius:0; --card-radius:0; --shadow:none;
+  --w-semi:700; --lead:1.55; --track-eyebrow:.1em; --measure:62ch;
+  --line-strong:var(--ink);
+}
+[data-style="formularz"] main{ counter-reset:sec; }
+[data-style="formularz"] .section{ counter-increment:sec; border-top:1.5px solid var(--ink); padding-top:clamp(2rem,4vw,3rem); }
+[data-style="formularz"] .section:first-child{ border-top:none; }
+[data-style="formularz"] .hero__eyebrow,[data-style="formularz"] .eyebrow{ font-family:'IBM Plex Mono',monospace; }
+[data-style="formularz"] .section__head .eyebrow::before{ content:"SEKCJA " counter(sec,decimal-leading-zero) " · "; }
+[data-style="formularz"] .hero__title{ font-family:var(--font-display); font-weight:800; text-transform:uppercase; letter-spacing:-.02em; line-height:1; }
+[data-style="formularz"] .section__title{ font-family:var(--font-display); font-weight:800; text-transform:uppercase; letter-spacing:-.01em; }
+[data-style="formularz"] .hero__facts .fact,[data-style="formularz"] .contact .fact{ border:1.5px solid var(--ink); padding:.7rem .9rem; }
+[data-style="formularz"] .hero__facts{ gap:0; border:none; display:grid; grid-template-columns:repeat(3,1fr); }
+[data-style="formularz"] .hero__facts .fact{ border-right-width:0; }
+[data-style="formularz"] .hero__facts .fact:last-child{ border-right-width:1.5px; }
+[data-style="formularz"] .card{ border:1.5px solid var(--ink); padding-top:calc(var(--card-pad) + 1.4rem); }
+[data-style="formularz"] .card::before{ content:"POLE"; position:absolute; top:0; left:0; padding:.25rem .7rem; font-family:'IBM Plex Mono',monospace; font-size:.6rem; letter-spacing:.14em; background:var(--ink); color:var(--bg); }
+[data-style="formularz"] .doc{ border:1.5px solid var(--ink); }
+[data-style="formularz"] .speclist{ border-top:1.5px solid var(--ink); }
+[data-style="formularz"] .spec{ border-bottom:1.5px solid var(--ink); }
+[data-style="formularz"] .spec__field::before{ content:"\2610\00a0\00a0"; font-family:'IBM Plex Mono',monospace; }
+[data-style="formularz"] .price td{ border-bottom:1.5px solid var(--ink); }
+[data-style="formularz"] .fieldlist li{ border:1.5px solid var(--ink); border-radius:0; }
+[data-style="formularz"] .fieldlist li::before{ content:"› "; }
+[data-style="formularz"] .btn{ text-transform:uppercase; letter-spacing:.06em; border:1.5px solid var(--ink); }
+[data-style="formularz"] .mapcard{ border:1.5px solid var(--ink); }
+[data-style="formularz"] .mapcard__label{ border:2px solid var(--accent); color:var(--accent); border-radius:6px; text-transform:uppercase; letter-spacing:.14em; font-family:'IBM Plex Mono',monospace; transform:rotate(-7deg); box-shadow:inset 0 0 0 3px var(--surface); font-weight:700; }
+
+/* ========================================================================
+   10 · WSPÓŁCZESNY PREMIUM — private-clinic flagship. Bricolage + Instrument.
+   Grotesque display married to italic serif accent, gradient wash, big scale.
+   ======================================================================== */
+:root[data-style="premium"]{
+  --font-display:'Bricolage Grotesque',system-ui,sans-serif; --font-body:'Public Sans',system-ui,sans-serif;
+  --font-eyebrow:'Public Sans',sans-serif;
+  --radius:12px; --radius-lg:18px; --btn-radius:10px; --card-radius:18px;
+  --shadow:0 20px 60px -34px rgba(20,30,24,.4); --w-semi:600; --w-bold:700;
+  --lead:1.62; --section-y:clamp(4.5rem,10vw,9rem); --track-eyebrow:.16em;
+  --step-5:clamp(3rem,2rem + 6vw,6.4rem); --card-border:1px solid color-mix(in srgb,var(--ink) 8%,transparent);
+}
+[data-style="premium"] .hero{ background:radial-gradient(120% 80% at 12% -10%, var(--accent-soft), transparent 60%); }
+[data-style="premium"] .hero__title{ font-weight:700; letter-spacing:-.03em; }
+[data-style="premium"] .hero__title-em{ font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-weight:400; letter-spacing:0; }
+[data-style="premium"] .eyebrow{ font-weight:700; }
+[data-style="premium"] .section__title{ font-weight:700; letter-spacing:-.025em; }
+[data-style="premium"] .section__title::after{ content:""; }
+[data-style="premium"] .card{ box-shadow:var(--shadow); }
+[data-style="premium"] .card:hover{ transform:translateY(-4px); box-shadow:0 30px 70px -36px rgba(20,30,24,.5); }
+[data-style="premium"] .doc{ box-shadow:var(--shadow); border:1px solid color-mix(in srgb,var(--ink) 8%,transparent); }
+[data-style="premium"] .card__ic{ width:30px; height:30px; }
+[data-style="premium"] .spec__name{ font-family:'Instrument Serif',serif; font-style:italic; font-size:var(--step-2); }
+[data-style="premium"] .split--wide .split__item:first-child .section__title{ font-size:var(--step-4); }
+[data-style="premium"] .price__val{ font-family:'Instrument Serif',serif; font-style:italic; font-size:1.15rem; }
+
+/* shared: hero deco hidden by default unless a style opts in */
+.hero__deco{ display:none; }
+[data-style="modernizm"] .hero__deco,[data-style="zielnik"] .hero__deco{ display:block; }
+
+/* ========================================================================
+   SHARED — alternating white/paper bands + new interactive modules.
+   Placed last so band handling wins over per-style card fills by source order.
+   ======================================================================== */
+/* On hard-white (--alt) bands, filled surfaces take the paper tone so they
+   still separate from the ground; on paper bands they stay white. */
+.section--alt .card:not(.card--prog),
+.section--alt .info-card,
+.section--alt .disclosure,
+.section--alt .doc{ background:var(--surface-2); }
+
+/* Informacyjny polish for the accordion + price explorer + fact strip */
+[data-style="informacyjny"] .docacc__name{ font-weight:700; }
+[data-style="informacyjny"] .docacc__item > summary{ transition:background .15s ease; border-radius:6px; }
+[data-style="informacyjny"] .docacc__item[open] > summary{ background:var(--surface-2); }
+[data-style="informacyjny"] .factstrip dd{ font-weight:600; }
+[data-style="informacyjny"] .pxcard__amt{ font-weight:800; }
+
+/* Redakcja: keep its dotted-leader flourish on the accordion titles too */
+[data-style="redakcja"] .docacc__name,[data-style="redakcja"] .docacc__field{ font-family:var(--font-eyebrow); }
+[data-style="redakcja"] .docacc__name{ font-family:var(--font-display); font-weight:600; }
