@@ -1,9 +1,9 @@
 # Arsmedica review hub
 
-The /medica/ homepage catalogs every distinct Arsmedica design: 11 classic styles x 10 palettes, Centrum x 10 palettes, Next (static preview of the matching SSR design), and 5 Retro versions. 18 layouts / 126 URL-addressable variants.
+Four live-site entries: Klasyczna, Centrum, Next and Retro. Colour/style options remain inside each site. Retro is presented last as an experimental collection.
 
-Original medica design preserved under klasyczne/. Centrum prerender bundle copied from Arsmedica2/dist/client with asset/router base rewritten to /medica/centrum/ because the older dedicated Pages URL currently returns 404. Source repositories are unchanged. Explicit styl/kolor query parameters take precedence over saved theme selection.
+Klasyczna preserves the original medica site. Centrum is a prerendered copy of Arsmedica2 with its router/asset paths rewritten to /medica/centrum/; the dedicated Arsmedica2 Pages address is unavailable. Next links to the static deployment of the matching SSR source. Retro groups its five experiments under one entry.
 
-## Existing legacy review caveats
+All clinic photographs are exact original files from the official gallery at https://e-arsmedica.pl/o-nas. Provenance and SHA-256 checksums are in hub/image-sources.json and each source repository's IMAGE-SOURCES.md. Previously illustrative photos and the unrelated favicon were replaced. Retro's enlarged copies were restored to original image bytes, with corrected descriptions and dimensions.
 
-Centrum preserves two original illustrative photos whose clinic provenance is unconfirmed and Google-hosted fonts. Its legacy dietitian phone differs from the newer verified clinic content pack (722 398 007 versus 791 755 792). These archived clinical data need approval before production use; the hub is a design review index.
+These are design previews with noindex. Clinical facts and legal texts require clinic approval before production use. Existing Centrum contact data and externally hosted fonts remain legacy review concerns.

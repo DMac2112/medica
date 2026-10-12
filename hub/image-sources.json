@@ -1,0 +1,42 @@
+{
+  "verified_on": "2026-10-12",
+  "source_gallery": "https://e-arsmedica.pl/o-nas",
+  "images": [
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby47.JPG",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "21f164eae2957eb3691508732a7cb574168778d1baee75d14a2ee92eaed0dfdc",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby48.JPG",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "5e94031240ed8c90533086c7f0be275fb3d22a6fd767626fd037ada5e52ba622",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby51.jpg",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "bf2e2e7aec543ebdae9c3dda67c1554f4b0eb8ed180ece30fb04fe678cfbd584",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby53.JPG",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "89eea538b834f526ea12086dbcd27ad17b2775981fe7b018bca8fcec6db195ee",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby54.JPG",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "db5c6ee8171b2695484a3fbb897dc7c137b8404b9886442f7dd87799fc6a98cd",
+      "original_bytes_preserved": true
+    },
+    {
+      "source": "https://e-arsmedica.pl/magazyn/image/przychodnia/zdjecianowejsiedziby/zdjecianowejsiedziby55.JPG",
+      "gallery": "https://e-arsmedica.pl/o-nas",
+      "sha256": "6ab800e30a0a3d94dda97476b5e4164a8fac911fa4cf4fc4341d70248b301781",
+      "original_bytes_preserved": true
+    }
+  ]
+}
