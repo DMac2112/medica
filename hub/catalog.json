@@ -1,0 +1,231 @@
+{
+  "projects": [
+    {
+      "id": "retro-v1",
+      "family": "retro",
+      "name": "Linie prowadzące",
+      "description": "Kolorowe kierunki porządkują rejestrację, lekarzy i dojazd. Czytelny układ inspirowany oznaczeniami przychodni.",
+      "url": "https://dmac2112.github.io/brand-preview/arsmedica-retro/v1/",
+      "variants": 1,
+      "label": "Retro V1"
+    },
+    {
+      "id": "retro-v2",
+      "family": "retro",
+      "name": "Grafik",
+      "description": "Godziny otwarcia i przyjęć są najważniejszą częścią strony. Grafik można wydrukować.",
+      "url": "https://dmac2112.github.io/brand-preview/arsmedica-retro/v2/",
+      "variants": 1,
+      "label": "Retro V2"
+    },
+    {
+      "id": "retro-v3",
+      "family": "retro",
+      "name": "Ulotka",
+      "description": "Układ drukowanego informatora, z klasycznymi literami i wyraźnym numerem telefonu. Przygotowany także do wydruku.",
+      "url": "https://dmac2112.github.io/brand-preview/arsmedica-retro/v3/",
+      "variants": 1,
+      "label": "Retro V3"
+    },
+    {
+      "id": "retro-v4",
+      "family": "retro",
+      "name": "Od drzwi do gabinetu",
+      "description": "Zdjęcia prowadzą od budynku przez rejestrację do gabinetu. Strona pokazuje rzeczywiste wnętrza przychodni.",
+      "url": "https://dmac2112.github.io/brand-preview/arsmedica-retro/v4/",
+      "variants": 1,
+      "label": "Retro V4"
+    },
+    {
+      "id": "retro-v5",
+      "family": "retro",
+      "name": "Duży druk",
+      "description": "Duże litery, proste skróty i rozmiar tekstu do wyboru. Dostępny jest również wysoki kontrast.",
+      "url": "https://dmac2112.github.io/brand-preview/arsmedica-retro/v5/",
+      "variants": 1,
+      "label": "Retro V5"
+    },
+    {
+      "id": "classic-informacyjny",
+      "family": "klasyczne",
+      "name": "Informacyjny",
+      "description": "Duże litery, prosta nawigacja i telefon pod ręką. Spokojna strona nastawiona na szybkie znalezienie informacji.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=informacyjny&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "informacyjny"
+    },
+    {
+      "id": "classic-apteka",
+      "family": "klasyczne",
+      "name": "Apteka klasyczna",
+      "description": "Szeryfowe litery i podwójne ramki. Układ nawiązuje do dawnej apteki i drukowanych informatorów.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=apteka&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "apteka"
+    },
+    {
+      "id": "classic-szwajcarska",
+      "family": "klasyczne",
+      "name": "Klinika szwajcarska",
+      "description": "Równa siatka, mocne nagłówki i oszczędne formy. Wyraźny porządek w dużej ilości informacji.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=szwajcarska&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "szwajcarska"
+    },
+    {
+      "id": "classic-humanizm",
+      "family": "klasyczne",
+      "name": "Ciepły humanizm",
+      "description": "Miękkie narożniki, łagodniejsze formy i przyjazna typografia. Mniej urzędowy charakter strony.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=humanizm&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "humanizm"
+    },
+    {
+      "id": "classic-redakcja",
+      "family": "klasyczne",
+      "name": "Redakcja zdrowia",
+      "description": "Układ magazynu z dużym tytułem i redakcyjną typografią. Treści czyta się jak artykuły.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=redakcja&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "redakcja"
+    },
+    {
+      "id": "classic-modernizm",
+      "family": "klasyczne",
+      "name": "Modernizm",
+      "description": "Geometryczne formy i wyraźne bloki koloru. Projekt inspirowany modernistycznym plakatem.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=modernizm&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "modernizm"
+    },
+    {
+      "id": "classic-instytut",
+      "family": "klasyczne",
+      "name": "Instytut",
+      "description": "Symetryczny układ, spokojne szeryfy i znak z inicjałów. Formalny, instytucjonalny charakter.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=instytut&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "instytut"
+    },
+    {
+      "id": "classic-koordynacja",
+      "family": "klasyczne",
+      "name": "Koordynacja",
+      "description": "Panele informacyjne, siatka i uporządkowane dane. Układ przypomina tablicę organizacji opieki.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=koordynacja&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "koordynacja"
+    },
+    {
+      "id": "classic-zielnik",
+      "family": "klasyczne",
+      "name": "Zielnik",
+      "description": "Botaniczne motywy, szeryfy i kursywa. Lżejsza, bardziej naturalna interpretacja tematu zdrowia.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=zielnik&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "zielnik"
+    },
+    {
+      "id": "classic-formularz",
+      "family": "klasyczne",
+      "name": "Formularz",
+      "description": "Rubryki i wyraźnie wydzielone pola. Nawiązanie do skierowań i dokumentów medycznych.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=formularz&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "formularz"
+    },
+    {
+      "id": "classic-premium",
+      "family": "klasyczne",
+      "name": "Współczesny premium",
+      "description": "Przestronny układ i połączenie prostych liter z kursywą. Bardziej reprezentacyjna strona przychodni.",
+      "url": "https://dmac2112.github.io/medica/klasyczne/?styl=premium&kolor=czerwien",
+      "variants": 10,
+      "label": "Klasyczne",
+      "style": "premium"
+    },
+    {
+      "id": "centrum",
+      "family": "centrum",
+      "name": "Arsmedica Centrum",
+      "description": "Spokojna strona z osobnymi zakładkami dla lekarzy, specjalistów i kontaktu. Klasyczne nagłówki i czytelne karty informacji.",
+      "url": "https://dmac2112.github.io/medica/centrum/",
+      "variants": 10,
+      "label": "Centrum"
+    },
+    {
+      "id": "next",
+      "family": "next",
+      "name": "Arsmedica Next",
+      "description": "Redakcyjny układ z dużą fotografią, spokojnymi nagłówkami i osobnymi stronami usług. Wersja z rozbudowaną nawigacją.",
+      "url": "https://dmac2112.github.io/arsmedica-next-static/",
+      "variants": 1,
+      "label": "Next"
+    }
+  ],
+  "colors": [
+    {
+      "id": "czerwien",
+      "name": "Czerwień",
+      "hex": "#c01527"
+    },
+    {
+      "id": "zielen",
+      "name": "Zieleń",
+      "hex": "#277049"
+    },
+    {
+      "id": "blekit",
+      "name": "Błękit",
+      "hex": "#1668a8"
+    },
+    {
+      "id": "granat",
+      "name": "Granat",
+      "hex": "#23386b"
+    },
+    {
+      "id": "morski",
+      "name": "Morski",
+      "hex": "#0e7370"
+    },
+    {
+      "id": "szmaragd",
+      "name": "Szmaragd",
+      "hex": "#12784a"
+    },
+    {
+      "id": "bordo",
+      "name": "Bordo",
+      "hex": "#8c2033"
+    },
+    {
+      "id": "grafit",
+      "name": "Grafit",
+      "hex": "#34383f"
+    },
+    {
+      "id": "stal",
+      "name": "Stal",
+      "hex": "#3f5670"
+    },
+    {
+      "id": "bursztyn",
+      "name": "Bursztyn",
+      "hex": "#8a5e10"
+    }
+  ],
+  "styles": 18,
+  "variants": 126
+}
