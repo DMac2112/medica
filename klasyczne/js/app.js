@@ -37,6 +37,18 @@
   var root = document.documentElement;
   var LS = { s: 'arsmedica.style', c: 'arsmedica.color' };
 
+  /* Show the published weekday plan in the clinic's timezone. The nearby
+     note distinguishes the ordinary schedule from holidays and changes. */
+  var todayLabel = document.getElementById('today-label');
+  var todayValue = document.getElementById('today-value');
+  if (todayLabel && todayValue) {
+    var now = new Date();
+    var weekday = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Warsaw', weekday: 'short' }).format(now);
+    var dateLabel = new Intl.DateTimeFormat('pl-PL', { timeZone: 'Europe/Warsaw', weekday: 'long', day: 'numeric', month: 'long' }).format(now);
+    todayLabel.textContent = 'Dziś · ' + dateLabel + ' · POZ';
+    todayValue.textContent = weekday === 'Sat' || weekday === 'Sun' ? 'POZ nieczynny' : '8:00–18:00';
+  }
+
   function clampIdx(n, len) { return ((n % len) + len) % len; }
   function pad(n) { return (n < 9 ? '0' : '') + (n + 1); }
 
@@ -138,6 +150,7 @@
   });
 
   document.addEventListener('keydown', function (e) {
+    if (!flickEl.contains(e.target)) return;
     var t = e.target;
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
     switch (e.key) {

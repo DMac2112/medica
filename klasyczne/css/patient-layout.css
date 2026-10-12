@@ -1,0 +1,152 @@
+/* Patient task order, within the existing classical style system. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f4f5f6;
+  --line: #e5e7ea;
+  --medical-green: #277049;
+  --medical-green-soft: #e5f1ea;
+}
+
+body { font-size: max(1.125rem, var(--step-0)); }
+::selection { background: var(--accent-soft); color: var(--ink); }
+html { scroll-padding-top: 6rem; }
+main [id] { scroll-margin-top: 1rem; }
+.nav { background: var(--surface); backdrop-filter: none; }
+.nav__in { justify-content: space-between; gap: .75rem; }
+.brand { min-height: 48px; }
+.brand__sub { text-transform: none; letter-spacing: 0; font-size: .875rem; }
+.registration-phone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 64px;
+  flex: none;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  line-height: 1.35;
+}
+.registration-phone span { font-size: .875rem; color: var(--muted); }
+.registration-phone strong { font-size: 1.25rem; color: var(--accent); }
+.registration-phone:hover strong { text-decoration: underline; }
+a[href^="tel:"] { display: inline-flex; min-height: 48px; align-items: center; white-space: nowrap; }
+
+/* Lead with a readable clinic-hours notice, rather than a promotional hero. */
+.patient-start.hero { padding-block: 1.5rem 2rem; }
+.patient-start .hero__in { text-align: left; background: none; border-radius: 0; }
+.patient-start .hero__title {
+  font-size: clamp(1.625rem, 1.3rem + 1.8vw, 2.625rem);
+  max-width: none;
+  margin: 0;
+  text-transform: none;
+  line-height: 1.2;
+}
+.patient-address { color: var(--muted); margin-top: .5rem; }
+.today-hours {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--medical-green-soft);
+  border-radius: var(--radius);
+  font-family: var(--font-ui);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1.5rem;
+  align-items: baseline;
+}
+.today-hours__label { font-weight: 700; color: var(--medical-green); }
+.today-hours__value { font-weight: 800; font-size: 1.5rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.today-hours__note { grid-column: 1 / -1; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+.confirm { display: block; font-family: var(--font-ui); font-size: 1rem; line-height: 1.5; color: var(--muted); font-weight: 400; margin-top: .4rem; }
+.today-hours__note .confirm { display: inline; }
+
+.task-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 1.25rem; gap: .5rem; }
+.task-nav a {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: .65rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--btn-radius);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.task-nav a:first-child { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.task-nav a:hover { text-decoration: underline; text-underline-offset: .2em; }
+.task-nav a:focus-visible { outline-offset: 3px; }
+.patient-section.section { padding-block: 2.5rem; }
+.patient-section .section__head { margin-bottom: 1.25rem; text-align: left; }
+.patient-section .section__title { font-size: clamp(1.625rem, 1.3rem + 1.8vw, 2.625rem); }
+.patient-section .section__intro { margin-top: .75rem; font-size: 1.125rem; }
+.patient-section .split { margin-top: 1.5rem; }
+.patient-section .split__item .split__title:not(:first-child) { margin-top: 1.75rem; }
+.patient-section .subhead { margin-block: 1.5rem .75rem; }
+
+.hours-list { display: grid; font-family: var(--font-ui); }
+.hours-list > div { display: grid; grid-template-columns: 1fr 1.35fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.hours-list dt { font-weight: 700; }
+.hours-list dd { font-variant-numeric: tabular-nums; min-width: 0; }
+.hours-list dd > a { display: inline-flex; align-items: center; min-height: 48px; }
+.hours-list .confirm { margin-top: .25rem; }
+.team-hours { margin-bottom: 1rem; }
+.patient-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 2rem; margin-top: 1.25rem; }
+.patient-links a { min-height: 48px; display: flex; align-items: center; color: var(--accent); text-underline-offset: .2em; }
+.preview-note { color: var(--medical-green); font-family: var(--font-ui); font-size: 1.125rem; margin-block: .75rem 1rem; }
+.mapcard__hint { padding-inline: 1rem; font-size: 1.125rem; text-align: center; color: var(--muted); }
+.mapcard__label { border-radius: var(--radius); font-size: 1.125rem; }
+.maplink { min-height: 48px; }
+.specialist-group { margin-top: 1.5rem; }
+.specialist-group > .disclosure__body { padding-inline: 0; }
+
+/* Legibility and target sizes apply to the pre-existing preview variants too. */
+.subhead, .fact dt, .factstrip dt, .docacc__field, .info-card__k, .pricex__hint, .pxcard__free { text-transform: none; letter-spacing: 0; font-size: 1rem; }
+.docacc__tag, .docacc__meta, .docacc__hours, .acc-hint, .note, .doclinks a,
+.pxopt, .pxcard figcaption, .info-card__v, .specreg, .leadnote, .disclosure__body { font-size: 1.125rem; }
+.docacc__hours { font-family: var(--font-ui); }
+.fact dd, .factstrip dd, .legal, .disclosure__note { font-size: 1.125rem; }
+.docacc__item > summary, .disclosure > summary, .btn, .pxopt, .doclinks a, .info-card__tel,
+.site-footer__nav a, .site-footer__base a, .docacc__tel { min-height: 48px; }
+.docacc__tel, .info-card__tel { display: inline-flex; align-items: center; }
+.site-footer__nav a { display: flex; align-items: center; }
+.site-footer__nav { font-size: 1.125rem; }
+.btn { white-space: normal; line-height: 1.35; }
+.flick__btn { min-width: 48px; min-height: 48px; }
+.flick__toggle, .flick__shuffle { min-height: 48px; }
+.flick__cap, .flick__num { font-size: .875rem; text-transform: none; letter-spacing: 0; }
+.flick__group { min-width: 0; }
+.hero__facts--recepta { padding: 1.25rem; }
+.pricex__stage { padding: 1.5rem; }
+.pricex__stage { top: 6rem; }
+.subhead { text-align: left; }
+
+@media (max-width: 900px) {
+  .task-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .task-nav a:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .nav__in { min-height: 76px; }
+  .brand { gap: .4rem; }
+  .brand__mark { width: 26px; height: 26px; }
+  .brand__name { font-size: 1.125rem; }
+  .registration-phone strong { font-size: 1.125rem; }
+  .registration-phone span, .brand__sub { font-size: .8125rem; }
+  .patient-start.hero { padding-block: 1.25rem 1.5rem; }
+  .patient-address { font-size: 1.125rem; }
+  .today-hours { grid-template-columns: 1fr; gap: .4rem; padding: .875rem 1rem; }
+  .today-hours__note { grid-column: 1; }
+  .task-nav { margin-top: 1rem; }
+  .task-nav a { padding: .65rem .75rem; min-height: 52px; }
+  .patient-section.section { padding-block: 2rem; }
+  .hours-list > div { grid-template-columns: 1fr; gap: .3rem; }
+  .hours-list dd > a { margin-top: -.3rem; }
+  .patient-links { grid-template-columns: 1fr; }
+  .docacc__item > summary { gap: .75rem; }
+  .contact .fact dd { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
+  .contact a { min-height: 48px; display: inline-flex; align-items: center; }
+  .flick.is-open .flick__cap { width: 2.75rem; }
+  .flick.is-open .flick__read { min-width: 0; }
+}

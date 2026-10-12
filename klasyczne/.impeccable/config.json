@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-12T23:48:38.284Z",
+        "reason": "Agent: inherited accents in leadnote, prescription facts and NFZ program cards; user requested retaining this version’s character and a relayout only."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-12T23:48:44.414Z",
+        "reason": "Agent: only finding is prescription hero__facts. patient-layout.css sets hero__facts--recepta padding to 1.25rem on all sides; Informacyjny sets 1.3rem vertically and at least 1.2rem horizontally. Children are inset at least 19.2px, above the 8px threshold. Static detector does not resolve this cascade."
+      }
+    ]
+  }
+}
