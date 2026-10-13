@@ -46,3 +46,12 @@ test('Warsaw day differs from UTC near midnight and in winter', () => {
  assert.equal(plan.today(new Date('2026-10-12T22:30:00Z')).day, 2);
  assert.equal(plan.today(new Date('2026-12-07T23:30:00Z')).day, 2);
 });
+test('closure sentence names today, tomorrow, or the next working date', () => {
+ assert.match(plan.today(new Date('2026-10-13T05:59:00Z')).poz.message, /otwieramy dziś o 8:00/);
+ assert.match(plan.today(new Date('2026-10-13T16:00:00Z')).poz.message, /otwieramy jutro o 8:00/);
+ assert.match(plan.today(new Date('2026-10-16T16:00:00Z')).poz.message, /19\.10.*o 8:00/);
+ assert.match(plan.today(new Date('2026-10-18T10:00:00Z')).poz.message, /otwieramy jutro o 8:00/);
+ assert.match(plan.today(new Date('2026-11-10T17:00:00Z')).poz.message, /12\.11.*o 8:00/);
+ assert.match(plan.today(new Date('2026-11-11T10:00:00Z')).poz.message, /do potwierdzenia/);
+ assert.match(plan.today(new Date('2026-12-23T17:00:00Z')).poz.message, /28\.12.*o 8:00/);
+});

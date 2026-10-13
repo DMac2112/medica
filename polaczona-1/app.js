@@ -8,8 +8,7 @@
     setText('board-clock',new Intl.DateTimeFormat('pl-PL',{timeZone:'Europe/Warsaw',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(now));
     setText('poz-label',plan.working?'POZ dzisiaj':'POZ dzisiaj · '+(plan.isHoliday?'święto':'weekend'));
     setText('poz-hours',plan.working?'8:00–18:00':plan.isHoliday?'Plan świąteczny':'Nieczynne');
-    const pozStatus=plan.isHoliday?'Godziny do potwierdzenia w rejestracji.':{before:'Teraz zamknięte · otwarcie o 8:00',open:'Teraz otwarte według grafiku',after:'Teraz zamknięte · po godzinach POZ',closed:'W weekendy POZ nie przyjmuje'}[plan.poz.phase];
-    setText('poz-state',pozStatus);
+    setText('poz-state',plan.poz.message);
     setText('blood-state',plan.isHoliday?'Święto · pobrania do potwierdzenia':{before:'Dziś od 7:30',open:'Teraz trwa pobieranie według grafiku',after:'Dzisiejsze pobrania zakończone',closed:'W weekendy punkt pobrań nieczynny'}[plan.blood.phase]);
     setText('doctors-heading',plan.working?'Kto dziś przyjmuje?':'Lekarze · '+(plan.isHoliday?'święto':'weekend'));
     const list=document.getElementById('today-doctors');
@@ -21,8 +20,9 @@
         const person=document.createElement('div');
         const name=document.createElement('strong');name.textContent=d.name;
         const role=document.createElement('span');role.className='daily-role';role.textContent=d.role;person.append(name,role);
-        const shift=document.createElement('div');const hours=document.createElement('div');hours.className='daily-hours';hours.textContent=d.hours;shift.append(hours);
-        const state=document.createElement('div');state.className='daily-state';state.textContent=d.uncertain?'Do potwierdzenia: piątkowa zmiana':{before:'Przyjęcia później dzisiaj',open:'W godzinach przyjęć według grafiku',after:'Dzisiejsze przyjęcia zakończone'}[d.phase];shift.append(state);
+        const shift=document.createElement('div');const hours=document.createElement('div');hours.className='daily-hours';hours.textContent=`dziś ${d.hours}`;shift.append(hours);
+        const status=d.uncertain?'Do potwierdzenia: piątkowa zmiana':{open:'Teraz przyjmuje według grafiku',after:'Przyjęcia zakończone'}[d.phase];
+        if(status){const state=document.createElement('div');state.className='daily-state';state.textContent=status;shift.append(state);}
         if(!d.uncertain){const track=document.createElement('div');track.className='shift-track';track.setAttribute('aria-hidden','true');const bar=document.createElement('span');track.style.setProperty('--start',`${(d.start-480)/600*100}%`);track.style.setProperty('--duration',`${(d.end-d.start)/600*100}%`);track.append(bar);shift.append(track);}
         row.append(person,shift);list.append(row);
       }

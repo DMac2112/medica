@@ -22,3 +22,15 @@ Zachowano oba komunikaty MyDr z tekstami audytu, dokumenty PDF i informacje NFZ.
 Detektor Impeccable uruchomiony raz: cztery ostrzeżenia. Poprawiono odstępy tła kontaktowego i interlinię nagłówków komunikatów. Ostrzeżenia o czerwonych krawędziach dotyczą pełnej szerokości headera/stopki, nie zaokrąglonych kart.
 
 **Pozostało:** wizualny przegląd 360/390px i desktopu, klawiatury oraz kontrola przepełnień w rzeczywistej przeglądarce. Sandbox odmówił uruchomienia lokalnego serwera i Chromium, a narzędzia Playwright wymagały niedostępnej zgody. Nie wykonano screenshotów; zachowania mobilnego nie przedstawiam jako zweryfikowanego. Nie wdrażano serwisu ani backendu. Fakty oznaczone powyżej wymagają odpowiedzi przychodni.
+
+## Runda poprawek 1 — 2026-10-13
+- Nagłówek mobilny: telefon ma własny pełny wiersz, tekst 20–22px i cel minimum 48px; marka nie konkuruje z numerem o szerokość.
+- Zamknięcie POZ: pełne zdanie wskazuje dziś, jutro lub datę najbliższego dnia pracy według grafiku, z pominięciem weekendów i świąt. W święto godziny pozostają do potwierdzenia. Uwagi „do potwierdzenia” są neutralne, bez czerwonych wyróżnień.
+- Lekarze: każdy ma „dziś” i źródłowe godziny; usunięto powtarzane „Przyjęcia później dzisiaj”. Pozostał status trwających/zakończonych przyjęć i niejasnych piątków.
+- Początek sekcji laboratorium podaje pobrania pn.–pt. 7:30–11:00; początek szczepień wskazuje punkt szczepień jako miejsce uzyskania szczegółów kalendarza.
+
+**Do potwierdzenia:** bez nowych wymyślonych faktów. Zachowano wszystkie wcześniejsze oznaczenia, zwłaszcza POZ 8:00 vs 7:30, zastępstwa/święta, piątkowe zmiany, odbiór wyników i kalendarz 2026 vs 2025. Pełna lista jest powyżej.
+
+**Weryfikacja:** `python3 polaczona-1/build.py` zakończone poprawnie; 7/7 testów grafiku; kontrola wszystkich sześciu stron i kontrastów; składnia obu plików JS; wykonanie app.js z atrapą DOM dla wtorku przed otwarciem, wtorku podczas przyjęć i niejasnego piątku — zaliczone.
+
+**Niewykonane:** przegląd w przeglądarce 360/390/1440px, screenshoty i pomiar przepełnień. Sandbox blokuje lokalny serwer (Operation not permitted), a narzędzie Playwright wymaga zgody niedostępnej przy polityce „never”. Zachowanie mobilne nie jest wizualnie zweryfikowane. Nie zmieniano innych wersji ani mechanizmu „Wygląd”; nie uruchamiano git commit ani git push.

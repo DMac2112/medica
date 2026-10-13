@@ -30,12 +30,24 @@ var ClinicSchedule = (() => {
     const clock=+parts.hour*60 + +parts.minute;
     const isHoliday=holiday(year,month,date), working=day>0 && day<6 && !isHoliday;
     const service=(start,end)=>({phase:!working?'closed':clock<start?'before':clock<end?'open':'after', start,end});
+    const poz=service(480,1080);
+    if(poz.phase==='open') poz.message='Teraz otwarte według grafiku';
+    else if(poz.phase==='before') poz.message='Teraz zamknięte, otwieramy dziś o 8:00 według grafiku.';
+    else if(isHoliday) poz.message='Dziś święto. Godziny otwarcia do potwierdzenia w rejestracji.';
+    else {
+      const next=new Date(Date.UTC(year,month-1,date));
+      let offset=0;
+      do {next.setUTCDate(next.getUTCDate()+1);offset++;}
+      while(next.getUTCDay()===0 || next.getUTCDay()===6 || holiday(next.getUTCFullYear(),next.getUTCMonth()+1,next.getUTCDate()));
+      const when=offset===1?'jutro':`w najbliższy dzień pracy (${next.getUTCDate()}.${String(next.getUTCMonth()+1).padStart(2,'0')})`;
+      poz.message=`Teraz zamknięte, otwieramy ${when} o 8:00 według grafiku.`;
+    }
     const daily = working ? doctors.filter(d=>d.week[day-1]).map(d=>{
       const hours=d.week[day-1], uncertain=hours.includes('parzyste');
       const [start,end]=uncertain?[null,null]:hours.split('–').map(minutes);
       return {...d,hours,uncertain,start,end,phase:uncertain?'uncertain':clock<start?'before':clock<end?'open':'after'};
     }) : [];
-    return {year,month,date,day,weekday:weekdays[day],clock,isHoliday,working,poz:service(480,1080),blood:service(450,660),doctors:daily};
+    return {year,month,date,day,weekday:weekdays[day],clock,isHoliday,working,poz,blood:service(450,660),doctors:daily};
   }
   return {doctors,weekdays,today};
 })();
