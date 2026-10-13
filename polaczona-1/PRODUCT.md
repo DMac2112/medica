@@ -1,0 +1,2 @@
+# ARSMEDICA CENTRUM — podgląd statyczny
+Przychodnia POZ w Kaliszu, ul. Babina 3, rejestracja 62 580 22 52. Odbiorcy głównie 60+, na telefonach, potrzebują krótkiej drogi do informacji. Priorytety: godziny, lekarze, laboratorium, szczepienia, kontakt i pozostałe sprawy. Home odpowiada na pytania o bieżący plan dnia. Źródło faktów: arsmedica-nfz/audit/pages/*.md i AUDIT.md; konfliktów nie rozstrzygamy bez przychodni. Wersja jest podglądem dla właściciela, nie produkcją i nie systemem rezerwacji. Brak zbierania danych. Wszelkie pliki nowej wersji pozostają w polaczona-1/.
