@@ -1,22 +1,21 @@
-# Centrum — raport odświeżenia (2026-10-13)
+# Centrum — raport odświeżenia (2026-10-13, runda 2)
 
 ## Zmieniono
-- Odświeżono stronę główną i wszystkie podstrony: informacje, kontakt, poz, specjalisci. Nowy build Arsmedica2 nie zawiera dodatkowych tras.
-- Wygenerowano pełny HTML przez handler SSR z istniejącego `.output` Arsmedica2 (726547c), bez ponownego budowania ani zmian w źródłowym repozytorium. Przeniesiono aktualne skrypty, CSS, oryginalne zdjęcia i dwa PDF-y.
-- Zachowano `/medica/centrum/` w routerze, modułach, preloadach, obrazach, dokumentach, faviconie i metadanych. Wszystkie strony mają `noindex, nofollow`; robots.txt blokuje indeksowanie. Nowe strony nie ładują zewnętrznych fontów ani osadzonej mapy.
-- Zmieniono tylko `centrum/`. Starsze, nieużywane zasoby pozostawiono; nie usuwano cudzych plików. Bez commita i pusha.
+- Odświeżono pełny HTML pięciu stron: główna, informacje, kontakt, poz, specjalisci. Użyto handlera SSR z aktualnego `.output` Arsmedica2 (commit `3362c48`), tak jak w poprzednim odświeżeniu; bez ponownego budowania i zmian w repozytorium źródłowym.
+- Przeniesiono aktualne moduły JS i CSS oraz źródłowe zdjęcia, dwa PDF-y, favicon i robots.txt. Nowy podgląd zawiera większe pola nawigacji, krótszy komunikat „Rozbieżne godziny POZ.” i telefon rejestracji na pełną szerokość pod godzinami.
+- Zachowano `/medica/centrum/` w linkach, zasobach, metadanych, preloadach i routerze po hydratacji. Każda strona ma `noindex, nofollow`; robots.txt blokuje indeksowanie. Starsze zasoby pozostawiono.
+- Zmieniono tylko `centrum/`; zastane zmiany w `pytania/` pozostały nietknięte. Nie wykonano commita ani pusha.
 
-## „do potwierdzenia”
-Nie dodawano nowych faktów ani oznaczeń; zachowano widoczne uwagi z aktualnego Arsmedica2:
-- Godziny POZ i gabinetu zabiegowego (8:00 / 7:30), osobne godziny rejestracji, aktualność grafików i piątki parzyste/nieparzyste, brak grafiku pielęgniarek i położnej.
-- Specjaliści: Julia Dobosz / Wiktoria Szczęsna, czwartek / piątek u chirurga naczyniowego, dwa numery masażu, brakujące godziny przyjęć.
-- Laboratorium: zakres badań i ceny, NFZ/skierowanie, przygotowanie oraz odbiór i terminy wyników po weekendach i świętach.
+## Fakty „do potwierdzenia”
+Nie dodano nowych faktów ani oznaczeń; zachowano oznaczenia z aktualnego Arsmedica2:
+- Godziny POZ i gabinetu zabiegowego (8:00 / 7:30), brak osobnych godzin rejestracji, aktualność grafików, piątki parzyste/nieparzyste i brak grafiku pielęgniarek oraz położnej.
+- Specjaliści: Julia Dobosz / Wiktoria Szczęsna, czwartek / piątek u chirurga naczyniowego, dwa numery masażu i brakujące godziny przyjęć.
+- Laboratorium: zakres badań i ceny, NFZ/skierowanie, przygotowanie, odbiór i terminy wyników po weekendach oraz świętach.
 - Szczepienia: kalendarz 2026 / tytuł 2025, zakres szczepienia skojarzonego, dostępność, wiek, kwalifikacja i finansowanie.
-- Informacje: zapisy do POZ i dokumenty do wizyty, dojazd/parking/wejście, PDF z 2019 r., kompletność RODO i procedur pacjenta, oznaczenia projektu grantowego.
+- Informacje: zapisy do POZ i dokumenty do wizyty, dojazd/parking/wejście, PDF z 2019 r., kompletność RODO i procedur pacjenta oraz oznaczenia projektu grantowego.
 
 ## Sprawdzono / niewykonane
-- PASS: 5 tras SSR — HTTP 200; nieistniejąca trasa — 404. HTML wszystkich stron odpowiada źródłowemu buildowi po normalizacji ścieżek wdrożenia i znaczników czasu.
-- PASS: 110 lokalnych linków, kotwic i zasobów; składnia 8 nowych modułów JS. CSS, zdjęcia, PDF-y, favicon i robots.txt są identyczne bajtowo ze źródłem; zdjęcia odpowiadają wykazowi `hub/image-sources.json`.
-- `git diff --check` zgłasza 15 końcowych spacji w skopiowanym, źródłowym tekście komunikatu o naruszeniu danych (`informacje`). Tekstu prawnego nie zmieniano.
-- Niewykonane: wizualna kontrola 360/390 px, interakcje po hydratacji i konsola przeglądarki. Narzędzie Playwright wymaga zgody, której polityka tej sesji nie dopuszcza; lokalny serwer jest blokowany przez sandbox (`EPERM`).
-- Fakty wymagające potwierdzenia przez przychodnię pozostają oznaczone; podgląd nie zbiera danych pacjentów.
+- PASS: pięć tras SSR zwraca 200, nieistniejąca trasa 404; HTML odpowiada aktualnemu buildowi po normalizacji ścieżek i znaczników czasu. Sprawdzono 110 lokalnych linków, kotwic i zasobów oraz składnię ośmiu modułów JS. Moduły odpowiadają źródłu poza zmianami ścieżek wdrożenia; CSS, zdjęcia i dokumenty są identyczne bajtowo ze źródłem.
+- PASS: noindex/nofollow na wszystkich stronach; brak formularzy i osadzonych iframe. Nie dodano zewnętrznych fontów, trackerów ani nowych zdjęć.
+- `git diff --check` wskazuje końcową spację w zmienionej pierwszej linii `informacje/index.html`: pochodzi z zachowanego źródłowego komunikatu o naruszeniu danych. Nie zmieniano tekstu prawnego.
+- Niewykonane: wizualna kontrola 360/390 px, pomiar przewijania i widoczności godzin/telefonu, interakcje po hydratacji oraz kontrola konsoli przeglądarki. Próba uruchomienia lokalnego serwera została zablokowana przez sandbox (`Operation not permitted`). Fakty wymagają potwierdzenia przez przychodnię.
