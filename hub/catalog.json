@@ -19,6 +19,18 @@
       "url": "https://dmac2112.github.io/arsmedica-next-static/"
     },
     {
+      "id": "polaczona-1",
+      "name": "Połączona 1",
+      "description": "Tablica dnia z godzinami POZ, grafikiem lekarzy i informacją o pobieraniu krwi.",
+      "url": "polaczona-1/"
+    },
+    {
+      "id": "polaczona-2",
+      "name": "Połączona 2",
+      "description": "Przewodnik po pytaniach pacjenta: godziny, lekarze, laboratorium i szczepienia.",
+      "url": "polaczona-2/"
+    },
+    {
       "id": "retro",
       "name": "Arsmedica Retro",
       "description": "Kolekcja pięciu eksperymentalnych układów: od drukowanej ulotki po duży tekst i grafik przyjęć. Bardziej ciekawostka niż główny kierunek.",
