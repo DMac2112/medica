@@ -168,3 +168,9 @@ a[href^="tel:"] { display: inline-flex; min-height: 48px; align-items: center; w
   .flick.is-open .flick__cap { width: 2.75rem; }
   .flick.is-open .flick__read { min-width: 0; }
 }
+
+/* Quiet showcase navigation, in normal flow above patient information. */
+.showcase-link { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--font-ui); font-size: 1rem; line-height: 1.4; color: var(--muted); text-decoration: none; }
+.showcase-link:hover { text-decoration: underline; }
+.showcase-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media print { .showcase-return { display: none; } }

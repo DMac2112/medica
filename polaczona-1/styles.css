@@ -16,3 +16,8 @@
 @media print{.task-nav,.header-phone,.back-link,.footer-links{display:none}.board-area,.page-intro{background:white}.board-head{background:white;color:#242c29}.date-line{color:#242c29}details::details-content{display:block!important}a{color:#242c29}}
 
 .verbatim h3{line-height:1.35;margin-top:24px;margin-bottom:12px}
+
+/* Quiet showcase navigation, in normal flow above patient information. */
+.showcase-link{display:inline-flex;align-items:center;min-height:44px;font-size:16px;line-height:1.4;color:var(--muted);text-decoration:none}
+.showcase-link:hover{text-decoration:underline}
+@media print{.showcase-return{display:none}}

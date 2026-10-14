@@ -138,3 +138,8 @@ li{margin-bottom:12px;padding-left:5px}
 @media(max-width:380px){.wrap{width:calc(100% - 32px)}.intro-type{padding-left:44px}.intro-type h1{font-size:32px}.today>strong{font-size:29px}.phone strong{font-size:28px}.today{column-gap:8px}.brand span span{font-size:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media print{.task-nav,.preview,.skip,.back,.footer-bottom>a{display:none}.wrap{width:100%}.care-inner{display:flex;justify-content:space-between}.question-layout{grid-template-columns:1fr 1.4fr;gap:30px}.question-section{padding-block:24px}.intro-photo{display:none}.guide-intro{display:block;padding-block:30px}.intro-type h1{font-size:48px}details{break-inside:avoid}a{color:var(--ink)}.footer{margin-top:24px}.button{color:var(--ink);background:white;border-color:var(--ink)}}
+
+/* Quiet showcase navigation, in normal flow above patient information. */
+.showcase-link{display:inline-flex;align-items:center;min-height:44px;font-size:16px;line-height:1.4;color:var(--muted);text-decoration:none}
+.showcase-link:hover{text-decoration:underline}
+@media print{.showcase-return{display:none}}

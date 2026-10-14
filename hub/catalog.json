@@ -20,14 +20,14 @@
     },
     {
       "id": "polaczona-1",
-      "name": "Połączona 1",
-      "description": "Tablica dnia z godzinami POZ, grafikiem lekarzy i informacją o pobieraniu krwi.",
+      "name": "Arsmedica Dziś",
+      "description": "Tablica dnia: czy przychodnia jest teraz otwarta, kto dziś przyjmuje i kiedy jest pobieranie krwi.",
       "url": "polaczona-1/"
     },
     {
       "id": "polaczona-2",
-      "name": "Połączona 2",
-      "description": "Przewodnik po pytaniach pacjenta: godziny, lekarze, laboratorium i szczepienia.",
+      "name": "Arsmedica Przewodnik",
+      "description": "Odpowiedzi na pytania, z którymi pacjenci dzwonią najczęściej: godziny, lekarze, laboratorium i szczepienia. Bardzo duży tekst.",
       "url": "polaczona-2/"
     },
     {
