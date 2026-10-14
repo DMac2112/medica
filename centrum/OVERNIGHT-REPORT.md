@@ -1,21 +1,21 @@
-# Centrum — raport odświeżenia (2026-10-13, runda 3)
+# Centrum — raport odświeżenia (2026-10-14)
 
 ## Zmieniono
-- Odświeżono wszystkie 5 stron (główna, informacje, kontakt, POZ, specjaliści) z aktualnego handlera SSR `.output` Arsmedica2, commit `319fa20`, bez przebudowy ani zmian w źródle. Zachowano dotychczasowy sposób odświeżenia, układ i zdjęcia.
-- Przeniesiono aktualne moduły JS, CSS i zasoby publiczne; starsze zasoby pozostawiono. Zachowano `/medica/centrum/` w HTML, metadanych, zasobach, preloadach i routerze po hydratacji oraz `noindex, nofollow` na każdej stronie i blokadę robots.txt.
-- Podgląd zawiera poprawki fact-checku: godziny opisane jako POZ, ograniczony zakres rejestracji centralnej specjalistów, źródłowy link i wymagania e-recepty, TPK i pomoc po godzinach, informację o krztuścu oraz wyposażeniu z grantu. Nie dodano formularza zbierającego dane.
-- Zmieniono wyłącznie `centrum/`. Zastaną zmianę w `pytania/` pozostawiono nietkniętą. Bez commita i pusha.
+- Odświeżono wszystkie 5 stron (główna, informacje, kontakt, POZ, specjaliści) przez aktualny handler SSR `.output/server/index.mjs` Arsmedica2, jak przy poprzednich odświeżeniach. Źródło: commit `646248a`, build z 14 października; bez przebudowy ani zmian w Arsmedica2.
+- Skopiowano aktualne JS, CSS i zasoby publiczne; starsze zasoby pozostawiono. Zachowano `/medica/centrum/` w HTML, zasobach, metadanych, routerze i preloadach oraz `noindex, nofollow`, robots.txt i prefiks w `_headers`.
+- Przeniesiono źródłowy link „← Wszystkie wersje Arsmedica” na każdej stronie. W statycznym HTML: `../` na głównej, `../../` na podstronach; oba prowadzą do `/medica/`. Kod źródłowy oblicza powrót po hydratacji na podstawie ścieżki i prefiksu routera.
+- Zmieniono wyłącznie `centrum/`. Bez git commit i git push.
 
 ## Fakty „do potwierdzenia”
-Przeniesiono oznaczenia z aktualnego źródła; nie dopisywano własnych faktów:
-- Godziny POZ i gabinetu zabiegowego (8:00 / 7:30), brak osobnych godzin rejestracji; uwaga o rozbieżności jest teraz w każdej stopce. Aktualność grafików, piątki parzyste/nieparzyste oraz brak grafiku pielęgniarek i położnej.
-- Specjaliści: Julia Dobosz / Wiktoria Szczęsna, czwartek / piątek u chirurga naczyniowego, dwa numery masażu oraz nieopublikowane godziny przyjęć.
-- Laboratorium: zakres badań i ceny, NFZ/skierowanie, przygotowanie, sposób i terminy odbioru wyników, w tym po weekendach i świętach.
+Nie dodano nowych faktów ani nowych oznaczeń; zachowano istniejące oznaczenia ze źródła:
+- Godziny POZ i gabinetu zabiegowego (8:00 / 7:30), osobne godziny rejestracji; aktualność grafików, piątki parzyste/nieparzyste, brak grafiku pielęgniarek i położnej.
+- Specjaliści: Julia Dobosz / Wiktoria Szczęsna, czwartek / piątek u chirurga naczyniowego, rozbieżne numery masażu i nieopublikowane godziny.
+- Laboratorium: zakres i ceny badań, NFZ/skierowanie, przygotowanie oraz sposób i terminy odbioru wyników.
 - Szczepienia: kalendarz 2026 / tytuł 2025, zakres szczepienia skojarzonego, dostępność, wiek, kwalifikacja i finansowanie.
 - Informacje: zapisy do POZ i dokumenty do wizyty, dojazd/parking/wejście, aktualność PDF z 2019 r., kompletność RODO i procedur pacjenta oraz oznaczenia projektu grantowego.
 
 ## Sprawdzono / niewykonane
-- PASS: 5 tras SSR zwraca 200, nieistniejąca trasa 404. Każdy HTML odpowiada aktualnemu buildowi po normalizacji ścieżek i znaczników czasu. Sprawdzono 110 lokalnych linków, kotwic i zasobów oraz składnię 8 modułów JS. CSS, zdjęcia, PDF-y, favicon i robots.txt są identyczne bajtowo ze źródłem.
-- PASS: noindex/nofollow, router i prefiks preloadów; brak formularzy, iframe i zewnętrznych fontów/CDN/Google Analytics w aktualnym HTML. Sprawdzono obecność nowych treści fact-checku. Hashe wszystkich 226 śledzonych plików poza `centrum/` pozostały bez zmian.
-- `git diff --check`: końcowa spacja w pierwszej linii `informacje/index.html` pochodzi z zachowanego źródłowego komunikatu o naruszeniu danych; pozostawiono ją, aby zachować zgodność ze źródłem.
-- Niewykonane: kontrola wizualna 360/390 px, pomiar przewijania i widoczności godzin/telefonu, interakcje po hydratacji i konsola przeglądarki. Sandbox odrzucił próbę otwarcia lokalnego portu (`Operation not permitted`). Dane oznaczone „do potwierdzenia” wymagają potwierdzenia przez przychodnię.
+- PASS: 5 tras SSR zwraca 200; nieistniejąca trasa 404. Każdy HTML i moduł JS odpowiada aktualnemu buildowi po odwróceniu zmian wdrożeniowych. Pozostałe zasoby są identyczne bajtowo ze źródłem, poza świadomie dostosowanym `_headers`.
+- PASS: 110 lokalnych linków, kotwic i zasobów; składnia 8 modułów JS i 27 odwołań do zależności; noindex/nofollow, prefiks routera i preloadów, powrót do katalogu na 5 stronach. Brak formularzy, iframe, zewnętrznych fontów/CDN/Google Analytics w aktualnym HTML. Hashe wszystkich 228 plików poza `centrum/` pozostały bez zmian.
+- `git diff --check`: jedna końcowa spacja w pierwszej linii `informacje/index.html` pochodzi ze źródłowego komunikatu o naruszeniu danych; zachowano zgodność ze źródłem, jak poprzednio.
+- Niewykonane: kontrola wizualna 360/390 px, przewijanie, widoczność godzin/telefonu, interakcje po hydratacji i konsola przeglądarki. Próba uruchomienia lokalnego serwera została zablokowana przez sandbox (`Operation not permitted`). Dane oznaczone „do potwierdzenia” nadal wymagają potwierdzenia przez przychodnię.
