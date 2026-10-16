@@ -1,0 +1,1 @@
+import{i as e}from"./index-Q0rfTvh6.js";var t=e();function n({children:e}){return(0,t.jsx)(`h1`,{className:`mb-6 border-b border-rule pb-3`,children:e})}export{n as t};
